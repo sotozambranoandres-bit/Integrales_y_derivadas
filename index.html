@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades de las Integrales | Guía Educativa</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <!-- Google Fonts: Inter para un look moderno y limpio -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/styles.css"> 
+    <!-- MathJax: Librería para renderizar fórmulas matemáticas (SVG es más rápido) -->
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo">📗 Integrales</a>
+            <!-- Botón de menú para celulares -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+                ☰
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="dropdown">
+                    <a href="#inicio" style="cursor: pointer;">📚 Temas ▼</a>
+                    <div class="dropdown-content">
+                        <a href="#introduccion">1. Introducción</a>
+                        <a href="#reglas-basicas">2. Reglas Básicas</a>
+                        <a href="#operaciones">3. Operaciones</a>
+                        <a href="#metodos">4. Métodos</a>
+                        <a href="#ejemplos">5. Ejercicios</a>
+                    </div>
+                </li>
+                <li><a href="html/formulario.html" class="text-primary">📝 Formulario</a></li>
+                <li><a href="html/quiz.html" class="text-primary">🎓 Quiz Interactivo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Encabezado Principal -->
+    <header id="inicio" class="hero-section">
+        <div class="container">
+            <h1>Propiedades de las Integrales</h1>
+            <p>Una guía clara y profesional para entender las reglas fundamentales del cálculo integral.</p>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container">
+        <!-- Sección: Introducción -->
+        <section id="introduccion" class="content-section fade-in">
+            <h2>1. Introducción a la Integral</h2>
+            <div class="card">
+                <p>En cálculo, la <strong>integral</strong> de una función representa el proceso inverso de la derivada. Se utiliza principalmente para calcular el <strong>área bajo la curva</strong> de una función matemática, así como volúmenes, desplazamientos y muchas otras cantidades acumuladas.</p>
+                
+                <h3 class="mt-2">¿Para qué sirve?</h3>
+                <p>Mientras que la derivada nos da la tasa de cambio instantánea (velocidad), la integral nos permite calcular la acumulación total de esa cantidad (distancia recorrida). En física se usa para calcular el trabajo mecánico; en economía, para encontrar el excedente del consumidor o productor.</p>
+                
+                <p class="mt-1">La integral indefinida (o antiderivada) se denota con el famoso símbolo de suma alargada \( \int \) introducido por Leibniz:</p>
+                
+                <div class="formula-box">
+                    \[ \int f(x) \, dx = F(x) + C \]
+                </div>
+                
+                <p class="mt-1 text-muted text-sm"><strong>Nota:</strong> Al calcular integrales indefinidas, siempre debemos añadir la <strong>constante de integración \( C \)</strong>, ya que la derivada de cualquier constante es cero, lo que significa que hay infinitas funciones primitivas posibles.</p>
+            </div>
+        </section>
+
+        <!-- Sección: Reglas Básicas -->
+        <section id="reglas-basicas" class="content-section fade-in">
+            <h2>2. Reglas Básicas</h2>
+            <div class="flashcard-grid">
+                <!-- Tarjeta 1 -->
+                <div class="flashcard-container">
+                    <div class="flashcard">
+                        <div class="flashcard-front">
+                            <h3>Integral de Cero</h3>
+                            <div class="icon">0️⃣</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="card-section">
+                                <h4>Fórmula:</h4>
+                                <div class="formula-box-small">
+                                    \[ \int 0 \, dx = C \]
+                                </div>
+                            </div>
+                            <div class="card-section example-section">
+                                <h4>Ejemplo:</h4>
+                                <p class="math-step">\( \text{Si la función es } 0 \)</p>
+                                <p class="math-step result">\( \int 0 \, dx = C \)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="flashcard-container">
+                    <div class="flashcard">
+                        <div class="flashcard-front">
+                            <h3>Integral de una Constante</h3>
+                            <div class="icon">🔢</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="card-section">
+                                <h4>Fórmula:</h4>
+                                <div class="formula-box-small">
+                                    \[ \int k \, dx = kx + C \]
+                                </div>
+                            </div>
+                            <div class="card-section example-section">
+                                <h4>Ejemplo:</h4>
+                                <p class="math-step">\( \int 5 \, dx \)</p>
+                                <p class="math-step result">\( = 5x + C \)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="flashcard-container">
+                    <div class="flashcard">
+                        <div class="flashcard-front">
+                            <h3>Regla de la Potencia</h3>
+                            <div class="icon">📈</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="card-section">
+                                <h4>Fórmula (\(n \neq -1\)):</h4>
+                                <div class="formula-box-small">
+                                    \[ \int x^n \, dx = \frac{x^{n+1}}{n+1} + C \]
+                                </div>
+                            </div>
+                            <div class="card-section example-section">
+                                <h4>Ejemplo:</h4>
+                                <p class="math-step">\( \int x^3 \, dx \)</p>
+                                <p class="math-step result">\( = \frac{x^4}{4} + C \)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Operaciones -->
+        <section id="operaciones" class="content-section fade-in">
+            <h2>3. Propiedades de Linealidad</h2>
+            <div class="card">
+                <h3>3.1. Múltiplo Constante</h3>
+                <p>Las constantes multiplicativas pueden sacarse fuera de la integral.</p>
+                <div class="formula-box">
+                    \[ \int k \cdot f(x) \, dx = k \int f(x) \, dx \]
+                </div>
+                <div class="example-section mt-1">
+                    <h4>Ejemplo Resuelto:</h4>
+                    <p class="math-step">Integrar: \( \int 7x^2 \, dx \)</p>
+                    <p class="math-step">\( = 7 \int x^2 \, dx = 7 \left( \frac{x^3}{3} \right) + C \)</p>
+                    <p class="math-step result">\( = \frac{7x^3}{3} + C \)</p>
+                </div>
+
+                <h3 class="mt-2-5">3.2. Regla de la Suma y Resta</h3>
+                <p>La integral de una suma o resta es la suma o resta de las integrales.</p>
+                <div class="formula-box">
+                    \[ \int [f(x) \pm g(x)] \, dx = \int f(x) \, dx \pm \int g(x) \, dx \]
+                </div>
+                <div class="example-section mt-1">
+                    <h4>Ejemplo Resuelto:</h4>
+                    <p class="math-step">Integrar: \( \int (4x^3 - 2x + 1) \, dx \)</p>
+                    <p class="math-step">\( = \int 4x^3 \, dx - \int 2x \, dx + \int 1 \, dx \)</p>
+                    <p class="math-step result">\( = x^4 - x^2 + x + C \)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Métodos de Integración -->
+        <section id="metodos" class="content-section fade-in">
+            <h2>4. Funciones Especiales</h2>
+            <div class="card">
+                <h3>4.1. Función Exponencial</h3>
+                <p>La integral de la función exponencial natural es ella misma.</p>
+                <div class="formula-box">
+                    \[ \int e^x \, dx = e^x + C \]
+                </div>
+                
+                <h3 class="mt-2-5">4.2. Inverso a la Potencia -1</h3>
+                <p>Cuando el exponente es -1, la regla de la potencia no aplica. En este caso obtenemos el logaritmo natural.</p>
+                <div class="formula-box">
+                    \[ \int \frac{1}{x} \, dx = \ln|x| + C \]
+                </div>
+
+                <h3 class="mt-2-5">4.3. Integrales Trigonométricas Básicas</h3>
+                <p>Las inversas de las derivadas trigonométricas más comunes:</p>
+                <ul class="ml-2 mt-1 leading-loose" style="list-style-type: square; color: var(--text-color);">
+                    <li>\( \int \sin(x) \, dx = -\cos(x) + C \)</li>
+                    <li>\( \int \cos(x) \, dx = \sin(x) + C \)</li>
+                    <li>\( \int \sec^2(x) \, dx = \tan(x) + C \)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección: Ejemplos Prácticos -->
+        <section id="ejemplos" class="content-section fade-in">
+            <h2>5. Ejercicios Prácticos Combinados</h2>
+            <div class="card">
+                <p>A continuación, pondremos a prueba todo lo aprendido. ¡Intenta resolverlos antes de revelar la solución!</p>
+
+                <!-- Nivel 1 -->
+                <h3 class="mt-2-5">🟢 Nivel Básico: Polinomios</h3>
+                <p>Integrar: \( \int (6x^2 - 4x + 3) \, dx \)</p>
+                
+                <button class="btn-toggle" onclick="toggleSolution('solucion1')">👁️ Mostrar Solución</button>
+                <div id="solucion1" class="solution-container">
+                    <p class="mt-1"><strong>Solución paso a paso:</strong></p>
+                    <div class="formula-box">
+                        \begin{align*}
+                        &= \int 6x^2 \, dx - \int 4x \, dx + \int 3 \, dx \\
+                        &= 6\left(\frac{x^3}{3}\right) - 4\left(\frac{x^2}{2}\right) + 3x + C \\
+                        &= 2x^3 - 2x^2 + 3x + C
+                        \end{align*}
+                    </div>
+                </div>
+
+                <!-- Nivel 2 -->
+                <h3 class="mt-2-5">🟠 Nivel Intermedio: Raíces y Fracciones</h3>
+                <p>Integrar: \( \int \left( \sqrt{x} + \frac{2}{x^2} \right) \, dx \)</p>
+                
+                <button class="btn-toggle" onclick="toggleSolution('solucion2')">👁️ Mostrar Solución</button>
+                <div id="solucion2" class="solution-container">
+                    <p class="mt-1"><strong>Solución:</strong> Convertimos las raíces y fracciones a exponentes fraccionarios y negativos.</p>
+                    <div class="formula-box">
+                        \begin{align*}
+                        &= \int (x^{1/2} + 2x^{-2}) \, dx \\
+                        &= \frac{x^{3/2}}{3/2} + 2 \frac{x^{-1}}{-1} + C \\
+                        &= \frac{2}{3}x^{3/2} - \frac{2}{x} + C
+                        \end{align*}
+                    </div>
+                </div>
+
+                <!-- Nivel 3 -->
+                <h3 class="mt-2-5">🔴 Nivel Avanzado: Mezcla Trascendental</h3>
+                <p>Integrar: \( \int (5e^x - \frac{4}{x} + 2\cos(x)) \, dx \)</p>
+                <button class="btn-toggle" onclick="toggleSolution('solucion3')">👁️ Mostrar Solución</button>
+                <div id="solucion3" class="solution-container">
+                    <p class="mt-1"><strong>Solución:</strong> Aplicamos las propiedades directamente a cada término.</p>
+                    <div class="formula-box">
+                        \begin{align*}
+                        &= 5\int e^x \, dx - 4\int \frac{1}{x} \, dx + 2\int \cos(x) \, dx \\
+                        &= 5e^x - 4\ln|x| + 2\sin(x) + C
+                        \end{align*}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <p>Creado para propósitos educativos. 2026</p>
+        </div>
+    </footer>
+
+    <!-- Script para animaciones y lógica -->
+    <script src="js/script.js"></script>
+</body>
+</html>

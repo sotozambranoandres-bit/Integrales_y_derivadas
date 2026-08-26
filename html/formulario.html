@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Integrales | Guía Educativa</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <!-- Google Fonts: Inter para un look moderno y limpio -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="../css/styles.css"> 
+    <!-- MathJax: Librería para renderizar fórmulas matemáticas -->
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">📗 Integrales</a>
+            <!-- Botón de menú para celulares -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+                ☰
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="dropdown">
+                    <a href="../index.html#inicio" style="cursor: pointer;">📚 Temas ▼</a>
+                    <div class="dropdown-content">
+                        <a href="../index.html#introduccion">1. Introducción</a>
+                        <a href="../index.html#reglas-basicas">2. Reglas Básicas</a>
+                        <a href="../index.html#operaciones">3. Operaciones</a>
+                        <a href="../index.html#metodos">4. Métodos</a>
+                        <a href="../index.html#ejemplos">5. Ejercicios</a>
+                    </div>
+                </li>
+                <li><a href="formulario.html" class="text-primary">📝 Formulario</a></li>
+                <li><a href="quiz.html" class="text-primary">🎓 Quiz Interactivo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Encabezado Secundario -->
+    <header class="hero-section" style="padding-bottom: 1rem;">
+        <div class="container">
+            <h1>Formulario Completo</h1>
+            <p>Tu hoja de trucos definitiva para resolver cualquier integral.</p>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container" style="max-width: 900px;">
+        
+        <section class="content-section fade-in visible">
+            <div class="card">
+                <h3 class="mt-0-5">1. Reglas Básicas</h3>
+                <div class="formula-grid">
+                    <div class="formula-box-small">\[ \int k \, dx = kx + C \]</div>
+                    <div class="formula-box-small">\[ \int x^n \, dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1) \]</div>
+                    <div class="formula-box-small">\[ \int \frac{1}{x} \, dx = \ln|x| + C \]</div>
+                    <div class="formula-box-small">\[ \int e^x \, dx = e^x + C \]</div>
+                    <div class="formula-box-small">\[ \int a^x \, dx = \frac{a^x}{\ln(a)} + C \]</div>
+                </div>
+
+                <h3 class="mt-2-5">2. Propiedades Algebraicas</h3>
+                <div class="formula-grid">
+                    <div class="formula-box-small">\[ \int k \cdot f(x) \, dx = k \int f(x) \, dx \]</div>
+                    <div class="formula-box-small">\[ \int [f(x) \pm g(x)] \, dx = \int f(x) \, dx \pm \int g(x) \, dx \]</div>
+                </div>
+
+                <h3 class="mt-2-5">3. Integrales Trigonométricas</h3>
+                <div class="formula-grid">
+                    <div class="formula-box-small">\[ \int \sin(x) \, dx = -\cos(x) + C \]</div>
+                    <div class="formula-box-small">\[ \int \cos(x) \, dx = \sin(x) + C \]</div>
+                    <div class="formula-box-small">\[ \int \sec^2(x) \, dx = \tan(x) + C \]</div>
+                    <div class="formula-box-small">\[ \int \csc^2(x) \, dx = -\cot(x) + C \]</div>
+                    <div class="formula-box-small">\[ \int \sec(x)\tan(x) \, dx = \sec(x) + C \]</div>
+                    <div class="formula-box-small">\[ \int \csc(x)\cot(x) \, dx = -\csc(x) + C \]</div>
+                </div>
+
+                <h3 class="mt-2-5">4. Funciones Inversas y Trigonométricas Inversas</h3>
+                <div class="formula-grid">
+                    <div class="formula-box-small">\[ \int \frac{1}{\sqrt{1 - x^2}} \, dx = \arcsin(x) + C \]</div>
+                    <div class="formula-box-small">\[ \int \frac{1}{1 + x^2} \, dx = \arctan(x) + C \]</div>
+                    <div class="formula-box-small">\[ \int \frac{1}{x\sqrt{x^2 - 1}} \, dx = \text{arcsec}|x| + C \]</div>
+                </div>
+
+                <div class="mt-2 text-center text-sm text-muted">
+                    <p><i>Nota: En todas las integrales indefinidas se asume una constante de integración \(C\).</i></p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-2">
+                <a href="../index.html" class="btn-primary">Volver a los Temas ⬅️</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <p>Creado para propósitos educativos. 2026</p>
+        </div>
+    </footer>
+
+    <!-- Script para animaciones y lógica -->
+    <script src="../js/script.js"></script>
+</body>
+</html>

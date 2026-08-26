@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interactivo | Integrales</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <!-- Google Fonts: Inter para un look moderno y limpio -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="../css/styles.css"> 
+    <!-- MathJax: Librería para renderizar fórmulas matemáticas -->
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">📗 Integrales</a>
+            <!-- Botón de menú para celulares -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+                ☰
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="dropdown">
+                    <a href="../index.html#inicio" style="cursor: pointer;">📚 Temas ▼</a>
+                    <div class="dropdown-content">
+                        <a href="../index.html#introduccion">1. Introducción</a>
+                        <a href="../index.html#reglas-basicas">2. Reglas Básicas</a>
+                        <a href="../index.html#operaciones">3. Operaciones</a>
+                        <a href="../index.html#metodos">4. Métodos</a>
+                        <a href="../index.html#ejemplos">5. Ejercicios</a>
+                    </div>
+                </li>
+                <li><a href="quiz.html" class="text-primary">🎓 Quiz Interactivo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Encabezado Secundario -->
+    <header class="hero-section" style="padding-bottom: 1rem;">
+        <div class="container">
+            <h1>Quiz de Integrales</h1>
+            <p>Pon a prueba tus conocimientos sobre las propiedades del cálculo integral.</p>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container">
+        <!-- QUIZ SECCION -->
+        <section id="quiz-seccion" class="content-section fade-in">
+            <div class="card" id="quiz-container">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <h3 id="question-tracker" class="text-muted text-sm mt-0-5">Pregunta 1 de 5</h3>
+                <p id="question-text" class="math-label mt-1">Cargando pregunta...</p>
+                
+                <div class="options-grid" id="options-container">
+                    <!-- Las opciones se generan con JS -->
+                </div>
+
+                <div id="feedback-container" class="feedback-box hidden"></div>
+
+                <div id="next-btn-container" class="mt-2 text-center hidden">
+                    <button class="btn-primary" id="btn-next">Siguiente Pregunta ➡️</button>
+                </div>
+            </div>
+
+            <!-- Contenedor de Resultados Finales -->
+            <div class="card hidden text-center" id="result-container">
+                <h2 class="text-primary mb-2">¡Quiz Completado!</h2>
+                <div class="score-circle mb-2" id="final-score">0/5</div>
+                <p id="result-message" class="text-md mb-2"></p>
+                <button class="btn-toggle" onclick="location.reload()">🔄 Reintentar Quiz</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <p>Creado para propósitos educativos. 2026</p>
+        </div>
+    </footer>
+
+    <!-- Script para animaciones y lógica -->
+    <script src="../js/script.js"></script>
+</body>
+</html>

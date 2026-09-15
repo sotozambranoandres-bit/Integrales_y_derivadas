@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cálculo Integral y EDO Variables Separables | Guía Educativa Completa</title>
-    <meta name="description" content="Guía interactiva completa de Cálculo Integral: Definición, Sumas de Riemann con simulador, Área bajo la curva, Propiedades, Métodos de integración (sustitución, partes, sustitución trigonométrica, fracciones parciales) y EDO de variables separables.">
+    <meta name="description" content="Guía interactiva de Cálculo Integral ordenada de lo más fácil a lo avanzado: Concepto básico, Integrales directas, Linealidad, Sustitución, Integral Definida y Área, Sumas de Riemann con simulador, Métodos avanzados y EDO.">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
     <!-- Google Fonts: Inter para un look moderno y limpio -->
@@ -28,18 +28,21 @@
             <ul class="nav-menu" id="navMenu">
                 <li class="dropdown">
                     <a href="#inicio" style="cursor: pointer;">📚 Temas del Curso ▼</a>
-                    <div class="dropdown-content" style="min-width: 260px;">
-                        <a href="#definicion">1. Definición (Definida e Indefinida)</a>
-                        <a href="#riemann">2. Sumatorias de Riemann (Simulador)</a>
-                        <a href="#area-curva">3. Área bajo la Curva</a>
-                        <a href="#propiedades">4. Propiedades de la Integral</a>
-                        <a href="#integrales-directas">5. Integrales Directas</a>
-                        <a href="#sustitucion">6. Sustitución y Cambio de Variable</a>
-                        <a href="#por-partes">7. Integración por Partes</a>
+                    <div class="dropdown-content" style="min-width: 290px;">
+                        <span style="display: block; padding: 6px 18px; font-size: 0.75rem; color: #4ade80; font-weight: 700; text-transform: uppercase;">🟢 Lo más fácil de aprender:</span>
+                        <a href="#que-es-integral">1. ¿Qué es una Integral? (Concepto Básico)</a>
+                        <a href="#integrales-directas">2. Integrales Directas (Reglas Inmediatas)</a>
+                        <a href="#propiedades-linealidad">3. Propiedades de Linealidad (Polinomios)</a>
+                        <span style="display: block; padding: 6px 18px; font-size: 0.75rem; color: #38bdf8; font-weight: 700; text-transform: uppercase; margin-top: 0.3rem;">🟡 Nivel Intermedio & Geometría:</span>
+                        <a href="#sustitucion">4. Sustitución y Cambio de Variable</a>
+                        <a href="#integral-definida-area">5. Integral Definida y Área bajo la Curva</a>
+                        <a href="#riemann">6. Sumatorias de Riemann (Simulador)</a>
+                        <span style="display: block; padding: 6px 18px; font-size: 0.75rem; color: #c084fc; font-weight: 700; text-transform: uppercase; margin-top: 0.3rem;">🔴 Métodos Avanzados & EDO:</span>
+                        <a href="#por-partes">7. Integración por Partes (ILATE)</a>
                         <a href="#sust-trigonometrica">8. Sustitución Trigonométrica</a>
                         <a href="#fracciones-parciales">9. Fracciones Parciales</a>
                         <a href="#edo-separables">10. EDO Variables Separables</a>
-                        <a href="#ejercicios-taller">11. Ejercicios Prácticos</a>
+                        <a href="#ejercicios-taller">11. Taller de Ejercicios Prácticos</a>
                         <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 0.4rem 0;">
                         <a href="derivadas/index.html" style="color: #64b5f6; font-weight: 600;">📘 Ver Cálculo Diferencial (Derivadas) ➔</a>
                     </div>
@@ -59,7 +62,7 @@
                 <a href="derivadas/index.html" class="badge" style="background: rgba(100, 181, 246, 0.15); color: #64b5f6; border: 1px solid rgba(100, 181, 246, 0.4); text-decoration: none;">📘 Ir a Cálculo Diferencial (Derivadas) ➔</a>
             </div>
             <h1>Cálculo Integral y EDO Variables Separables</h1>
-            <p>Guía interactiva universitaria con explicaciones rigurosas, simulador de aproximación de Riemann en tiempo real, métodos analíticos paso a paso y resolución de ecuaciones diferenciales.</p>
+            <p>Aprende de forma intuitiva y progresiva: desde las reglas más fáciles y directas hasta los métodos avanzados, con simulador interactivo de Riemann y ejercicios resueltos paso a paso.</p>
         </div>
     </header>
 
@@ -67,50 +70,133 @@
     <main class="container">
 
         <!-- ====================================================================
-             TEMA 1: DEFINICIÓN DE INTEGRAL (DEFINIDA E INDEFINIDA)
+             TEMA 1 (LO MÁS FÁCIL): ¿QUÉ ES UNA INTEGRAL? (CONCEPTO BÁSICO)
              ==================================================================== -->
-        <section id="definicion" class="content-section fade-in">
-            <h2>1. Definición de Integral: Definida e Indefinida</h2>
+        <section id="que-es-integral" class="content-section fade-in">
+            <h2>1. ¿Qué es una Integral? (Concepto Básico)</h2>
             <div class="card">
-                <p>La integración es la operación inversa de la diferenciación. Matemáticamente, surge tanto de la necesidad de reconstruir una función a partir de su tasa de cambio instantánea como de medir cantidades acumuladas (área, volumen, trabajo físico, masa).</p>
+                <span class="badge badge-primary" style="margin-bottom: 0.6rem;">🟢 ¡Empieza aquí! Lo más fácil</span>
+                <p class="mt-0-5">La forma más sencilla de entender la <strong>integral</strong> es pensar en ella como el <strong>camino inverso de la derivada</strong> (por eso también se le llama <em>antiderivada</em> o <em>primitiva</em>).</p>
 
-                <h3 class="mt-2">1.1. Integral Indefinida (Antiderivada General)</h3>
-                <p>Si \( f(x) \) es una función continua, la <strong>integral indefinida</strong> representa la familia de todas las funciones primitivas \( F(x) \) cuya derivada es \( f(x) \):</p>
-                <div class="formula-box">
-                    \[ \int f(x) \, dx = F(x) + C \quad \iff \quad F'(x) = f(x) \]
-                </div>
-                <p class="text-muted text-sm mt-1">
-                    <strong>¿Por qué sumamos la constante \( C \)?</strong> Como la derivada de cualquier constante es cero (\( \frac{d}{dx}[C] = 0 \)), existen infinitas funciones con la misma pendiente. La constante \( C \) parametriza toda la familia de curvas paralelas primitivas.
-                </p>
-
-                <h3 class="mt-2-5">1.2. Integral Definida</h3>
-                <p>La <strong>integral definida</strong> representa un valor numérico real: la acumulación neta de la función \( f(x) \) en un intervalo cerrado \( [a, b] \), donde \( a \) es el límite inferior y \( b \) el límite superior:</p>
-                <div class="formula-box">
-                    \[ \int_{a}^{b} f(x) \, dx \]
-                </div>
-
-                <h3 class="mt-2-5">1.3. Teorema Fundamental del Cálculo (TFC)</h3>
-                <p>El TFC conecta magistralmente el cálculo diferencial con el cálculo integral en dos partes fundamentales:</p>
-                
                 <div class="steps-timeline">
                     <div class="step-card">
-                        <div class="step-badge">1</div>
+                        <div class="step-badge">💡</div>
                         <div class="step-body">
-                            <h4>Primer Teorema Fundamental (Función de Acumulación)</h4>
-                            <p>Si \( f \) es continua en \( [a, b] \), entonces la función \( g(x) = \int_{a}^{x} f(t) \, dt \) es diferenciable y su derivada es exactamente \( f(x) \):</p>
+                            <h4>La Idea Clave</h4>
+                            <p>Si al derivar una función \( F(x) = x^2 \) obtenemos \( 2x \), entonces el proceso inverso de integrar \( 2x \) nos devuelve a \( x^2 \):</p>
                             <div class="formula-box-small">
-                                \[ \frac{d}{dx} \left[ \int_{a}^{x} f(t) \, dt \right] = f(x) \]
+                                \[ \frac{d}{dx}[x^2] = 2x \quad \iff \quad \int 2x \, dx = x^2 + C \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-2">¿Por qué siempre se suma la constante \( + C \)?</h3>
+                <p>Observa qué pasa al derivar estas funciones:</p>
+                <ul class="ml-2 mt-1 leading-loose" style="list-style-type: square; color: var(--text-color);">
+                    <li>La derivada de \( x^2 + 5 \) es \( 2x \)</li>
+                    <li>La derivada de \( x^2 - 100 \) es \( 2x \)</li>
+                    <li>La derivada de \( x^2 \) es \( 2x \)</li>
+                </ul>
+                <p class="mt-1">Como la derivada de cualquier número constante es \( 0 \), al hacer el camino hacia atrás no podemos saber cuál número constante exacto había al inicio. Por eso escribimos \( + C \) (constante de integración), que representa <strong>a cualquier número real</strong>.</p>
+                
+                <div class="formula-box">
+                    \[ \int f(x) \, dx = F(x) + C \]
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             TEMA 2: INTEGRALES DIRECTAS (FÓRMULAS INMEDIATAS)
+             ==================================================================== -->
+        <section id="integrales-directas" class="content-section fade-in">
+            <h2>2. Integrales Directas (Reglas Inmediatas)</h2>
+            <div class="card">
+                <span class="badge badge-primary" style="margin-bottom: 0.6rem;">🟢 Fórmulas elementales</span>
+                <p class="mt-0-5">Las <strong>integrales directas</strong> son las más fáciles y rápidas de resolver. No requieren trucos ni procedimientos largos: basta con reconocer la fórmula y aplicarla de inmediato.</p>
+
+                <div class="flashcard-grid mt-2">
+                    <!-- Tarjeta 1: Constante -->
+                    <div class="flashcard-container">
+                        <div class="flashcard">
+                            <div class="flashcard-front">
+                                <h3>Integral de una Constante</h3>
+                                <div class="icon">🔢</div>
+                                <p class="text-sm text-muted mt-1">Pasa el cursor para ver la fórmula</p>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="card-section">
+                                    <h4>Fórmula:</h4>
+                                    <div class="formula-box-small">\[ \int k \, dx = kx + C \]</div>
+                                </div>
+                                <div class="card-section example-section">
+                                    <h4>Ejemplo:</h4>
+                                    <p class="math-step">\( \int 7 \, dx = 7x + C \)</p>
+                                    <p class="math-step">\( \int 1 \, dx = x + C \)</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="step-card">
-                        <div class="step-badge">2</div>
-                        <div class="step-body">
-                            <h4>Segundo Teorema Fundamental (Regla de Barrow)</h4>
-                            <p>Permite evaluar la integral definida conociendo cualquier antiderivada \( F(x) \):</p>
-                            <div class="formula-box-small">
-                                \[ \int_{a}^{b} f(x) \, dx = \left. F(x) \right|_{a}^{b} = F(b) - F(a) \]
+                    <!-- Tarjeta 2: Potencia -->
+                    <div class="flashcard-container">
+                        <div class="flashcard">
+                            <div class="flashcard-front">
+                                <h3>Regla de la Potencia</h3>
+                                <div class="icon">📈</div>
+                                <p class="text-sm text-muted mt-1">Sumar 1 al exponente</p>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="card-section">
+                                    <h4>Fórmula (\( n \neq -1 \)):</h4>
+                                    <div class="formula-box-small">\[ \int x^n \, dx = \frac{x^{n+1}}{n+1} + C \]</div>
+                                </div>
+                                <div class="card-section example-section">
+                                    <h4>Ejemplo:</h4>
+                                    <p class="math-step">\( \int x^3 \, dx = \frac{x^{3+1}}{3+1} + C = \frac{x^4}{4} + C \)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3: Exponencial -->
+                    <div class="flashcard-container">
+                        <div class="flashcard">
+                            <div class="flashcard-front">
+                                <h3>Exponencial Natural</h3>
+                                <div class="icon">⚡</div>
+                                <p class="text-sm text-muted mt-1">La función idéntica</p>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="card-section">
+                                    <h4>Fórmula:</h4>
+                                    <div class="formula-box-small">\[ \int e^x \, dx = e^x + C \]</div>
+                                </div>
+                                <div class="card-section example-section">
+                                    <h4>Ejemplo:</h4>
+                                    <p class="math-step">\( \int 5e^x \, dx = 5e^x + C \)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 4: Logarítmica -->
+                    <div class="flashcard-container">
+                        <div class="flashcard">
+                            <div class="flashcard-front">
+                                <h3>Potencia -1 (Logaritmo)</h3>
+                                <div class="icon">🔍</div>
+                                <p class="text-sm text-muted mt-1">Caso especial \( 1/x \)</p>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="card-section">
+                                    <h4>Fórmula:</h4>
+                                    <div class="formula-box-small">\[ \int \frac{1}{x} \, dx = \ln|x| + C \]</div>
+                                </div>
+                                <div class="card-section example-section">
+                                    <h4>Ejemplo:</h4>
+                                    <p class="math-step">\( \int \frac{3}{x} \, dx = 3\ln|x| + C \)</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -119,31 +205,186 @@
         </section>
 
         <!-- ====================================================================
-             TEMA 2: SUMATORIAS DE RIEMANN & SIMULADOR INTERACTIVO
+             TEMA 3: PROPIEDADES DE LINEALIDAD (SUMAS, RESTAS Y POLINOMIOS)
+             ==================================================================== -->
+        <section id="propiedades-linealidad" class="content-section fade-in">
+            <h2>3. Propiedades de Linealidad (Integrando Polinomios)</h2>
+            <div class="card">
+                <span class="badge badge-primary" style="margin-bottom: 0.6rem;">🟢 Operaciones básicas</span>
+                <p class="mt-0-5">Integrar polinomios y expresiones combinadas es muy sencillo gracias a dos reglas fundamentales:</p>
+
+                <div class="cases-grid mt-1">
+                    <div class="case-card">
+                        <h4>1. Sacar Constantes Multiplicativas</h4>
+                        <p class="text-sm text-muted">Los números que multiplican a una función pueden salir fuera de la integral:</p>
+                        <div class="formula-box-small">
+                            \[ \int c \cdot f(x) \, dx = c \int f(x) \, dx \]
+                        </div>
+                    </div>
+
+                    <div class="case-card blue">
+                        <h4>2. Separar Sumas y Restas</h4>
+                        <p class="text-sm text-muted">La integral de una suma o resta es la suma o resta de cada integral:</p>
+                        <div class="formula-box-small">
+                            \[ \int [f(x) \pm g(x)] \, dx = \int f(x) \, dx \pm \int g(x) \, dx \]
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-section mt-1-5">
+                    <h4>Ejemplo Resuelto: Integrando un Polinomio Completo</h4>
+                    <p class="math-step">Resolver la integral: \( \int (6x^2 - 4x + 5) \, dx \)</p>
+                    <button class="btn-toggle" onclick="toggleSolution('solPolinomio')">👁️ Mostrar Solución</button>
+                    <div id="solPolinomio" class="solution-container">
+                        <div class="formula-box">
+                            \begin{align*}
+                            \int (6x^2 - 4x + 5) \, dx &= 6 \int x^2 \, dx - 4 \int x \, dx + \int 5 \, dx \\
+                            &= 6 \left(\frac{x^3}{3}\right) - 4 \left(\frac{x^2}{2}\right) + 5x + C \\
+                            &= 2x^3 - 2x^2 + 5x + C
+                            \end{align*}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             TEMA 4: SUSTITUCIÓN Y CAMBIO DE VARIABLE
+             ==================================================================== -->
+        <section id="sustitucion" class="content-section fade-in">
+            <h2>4. Sustitución y Cambio de Variable</h2>
+            <div class="card">
+                <span class="badge badge-blue" style="margin-bottom: 0.6rem;">🟡 El primer método analítico</span>
+                <p class="mt-0-5">Cuando una integral no se puede resolver de forma directa porque contiene funciones compuestas (un paréntesis elevado a una potencia, una raíz o un exponente complejo), usamos el <strong>método de sustitución</strong> (la regla de la cadena al revés).</p>
+
+                <div class="formula-box">
+                    \[ \int f(g(x)) \, g'(x) \, dx = \int f(u) \, du \quad \text{haciendo } u = g(x), \quad du = g'(x)\,dx \]
+                </div>
+
+                <h3 class="mt-2">Paso a Paso para Resolver por Sustitución:</h3>
+                <div class="steps-timeline">
+                    <div class="step-card">
+                        <div class="step-badge">1</div>
+                        <div class="step-body">
+                            <h4>Elegir \( u \)</h4>
+                            <p>Escoger la función interior más compleja (lo que está dentro de un radical, paréntesis con exponente o denominador).</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-badge">2</div>
+                        <div class="step-body">
+                            <h4>Diferenciar para calcular \( du \)</h4>
+                            <p>Derivar \( u \) respecto a \( x \): \( du = u'(x)\,dx \) y ajustar constantes numéricas.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-badge">3</div>
+                        <div class="step-body">
+                            <h4>Reescribir e Integrar</h4>
+                            <p>Reemplazar todo para que la integral quede únicamente en términos de \( u \) y aplicar una regla directa.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-badge">4</div>
+                        <div class="step-body">
+                            <h4>Volver a la variable original \( x \)</h4>
+                            <p>Reemplazar \( u \) por la función original en términos de \( x \).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-section mt-1">
+                    <h4>Ejemplo Resuelto: Sustitución</h4>
+                    <p class="math-step">Resolver: \( \int 2x \, e^{x^2} \, dx \)</p>
+                    <button class="btn-toggle" onclick="toggleSolution('solSustitucion')">👁️ Mostrar Solución</button>
+                    <div id="solSustitucion" class="solution-container">
+                        <div class="formula-box">
+                            \begin{align*}
+                            \text{Paso 1 y 2: Sea } u &= x^2 \implies du = 2x \, dx \\
+                            \text{Paso 3: Sustituir: } \int 2x \, e^{x^2} \, dx &= \int e^u \, du = e^u + C \\
+                            \text{Paso 4: Volver a } x: &= e^{x^2} + C
+                            \end{align*}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             TEMA 5: INTEGRAL DEFINIDA Y ÁREA BAJO LA CURVA
+             ==================================================================== -->
+        <section id="integral-definida-area" class="content-section fade-in">
+            <h2>5. Integral Definida y Área Bajo la Curva</h2>
+            <div class="card">
+                <span class="badge badge-blue" style="margin-bottom: 0.6rem;">🟡 Aplicación Geométrica</span>
+                <p class="mt-0-5">Hasta ahora hemos calculado familias de funciones (\(+ C\)). Cuando a la integral le asignamos límites numéricos \([a, b]\), se convierte en una <strong>integral definida</strong> y su resultado es un <strong>número real</strong> que representa el área neta bajo la curva.</p>
+
+                <h3 class="mt-2">5.1. Regla de Barrow (Teorema Fundamental del Cálculo)</h3>
+                <p>Evaluar una integral definida es muy fácil si ya sabemos integrar: encontramos la antiderivada \( F(x) \) y restamos el valor en el límite superior menos el límite inferior:</p>
+
+                <div class="formula-box">
+                    \[ \int_{a}^{b} f(x) \, dx = \left. F(x) \right|_{a}^{b} = F(b) - F(a) \]
+                </div>
+
+                <h3 class="mt-2-5">5.2. Casos de Cálculo de Áreas</h3>
+                <div class="cases-grid">
+                    <div class="case-card">
+                        <h4>1. Área Sobre el Eje X <span class="badge badge-primary">f(x) ≥ 0</span></h4>
+                        <p class="text-sm text-muted">Cuando la función es positiva en todo el intervalo \( [a, b] \):</p>
+                        <div class="formula-box-small">\[ A = \int_{a}^{b} f(x) \, dx \]</div>
+                    </div>
+
+                    <div class="case-card blue">
+                        <h4>2. Regiones Negativas <span class="badge badge-blue">|f(x)|</span></h4>
+                        <p class="text-sm text-muted">Para medir el área física total se usa el valor absoluto de las partes bajo el eje:</p>
+                        <div class="formula-box-small">\[ A = \int_{a}^{b} |f(x)| \, dx \]</div>
+                    </div>
+
+                    <div class="case-card purple">
+                        <h4>3. Área Entre Dos Curvas <span class="badge badge-purple">f(x) ≥ g(x)</span></h4>
+                        <p class="text-sm text-muted">Curva superior menos curva inferior:</p>
+                        <div class="formula-box-small">\[ A = \int_{a}^{b} [f(x) - g(x)] \, dx \]</div>
+                    </div>
+                </div>
+
+                <div class="example-section mt-1">
+                    <h4>Ejemplo Resuelto: Área entre dos funciones</h4>
+                    <p class="math-step">Calcular el área delimitada por \( f(x) = 4 - x^2 \) y \( g(x) = x + 2 \).</p>
+                    <button class="btn-toggle" onclick="toggleSolution('solAreaCurva')">👁️ Mostrar Solución</button>
+                    <div id="solAreaCurva" class="solution-container">
+                        <div class="formula-box">
+                            \begin{align*}
+                            \textbf{Puntos de corte: } & 4 - x^2 = x + 2 \implies x^2 + x - 2 = 0 \implies (x+2)(x-1) = 0 \\
+                            & a = -2, \quad b = 1. \\[1ex]
+                            \textbf{Plantear integral: } & A = \int_{-2}^{1} [(4 - x^2) - (x + 2)] \, dx = \int_{-2}^{1} (2 - x - x^2) \, dx \\[1ex]
+                            \textbf{Regla de Barrow: } & = \left[ 2x - \frac{x^2}{2} - \frac{x^3}{3} \right]_{-2}^{1} = \frac{7}{6} - \left(-\frac{10}{3}\right) = \frac{9}{2} = 4.5 \text{ u}^2
+                            \end{align*}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+             TEMA 6: SUMATORIAS DE RIEMANN & SIMULADOR INTERACTIVO
              ==================================================================== -->
         <section id="riemann" class="content-section fade-in">
-            <h2>2. Sumatorias de Riemann</h2>
+            <h2>6. Sumatorias de Riemann</h2>
             <div class="card">
-                <p>Históricamente, Bernhard Riemann formalizó la noción de integral aproximando el área bajo una curva mediante la partición del intervalo \( [a, b] \) en \( n \) rectángulos elementales de ancho \( \Delta x = \frac{b - a}{n} \).</p>
+                <span class="badge badge-blue" style="margin-bottom: 0.6rem;">🔬 Fundamento Teórico y Visual</span>
+                <p class="mt-0-5">¿Cómo sabemos que la integral realmente calcula el área? Riemann demostró que dividiendo la región bajo la curva en \( n \) rectángulos muy delgados de ancho \( \Delta x = \frac{b - a}{n} \), la suma de sus áreas converge exactamente a la integral cuando \( n \to \infty \):</p>
 
                 <div class="formula-box">
                     \[ S_n = \sum_{i=1}^{n} f(x_i^*) \, \Delta x \quad \implies \quad \int_{a}^{b} f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i^*) \, \Delta x \]
                 </div>
 
-                <p class="mt-1">Dependiendo de cómo se elija la altura del rectángulo \( x_i^* \), se distinguen:</p>
-                <ul class="ml-2 mt-1 leading-loose" style="list-style-type: square; color: var(--text-color);">
-                    <li><strong>Extremo Izquierdo (\( L_n \)):</strong> \( x_i^* = a + (i - 1)\Delta x \)</li>
-                    <li><strong>Extremo Derecho (\( R_n \)):</strong> \( x_i^* = a + i\Delta x \)</li>
-                    <li><strong>Punto Medio (\( M_n \)):</strong> \( x_i^* = a + \left(i - \frac{1}{2}\right)\Delta x \) (mayor precisión geométrica)</li>
-                </ul>
-
                 <!-- SIMULADOR INTERACTIVO -->
                 <div class="sim-container mt-2">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
-                        <h3 style="margin: 0; color: var(--primary-color);">🔬 Simulador Interactivo de Sumas de Riemann</h3>
-                        <span class="badge badge-primary">Canvas Interactivo</span>
+                        <h3 style="margin: 0; color: var(--primary-color);">🔬 Simulador Interactivo de Riemann</h3>
+                        <span class="badge badge-primary">En tiempo real</span>
                     </div>
-                    <p class="text-sm text-muted">Ajusta los controles deslizantes para observar cómo aumentar el número de particiones \( n \) hace que la suma de rectángulos converja al valor exacto de la integral definida:</p>
+                    <p class="text-sm text-muted">Mueve el control deslizante para ver cómo al aumentar los rectángulos (\( n \)), el error se reduce a casi cero:</p>
 
                     <div class="sim-canvas-wrapper mt-1">
                         <canvas id="riemannCanvas" width="760" height="340"></canvas>
@@ -161,9 +402,9 @@
                         </div>
 
                         <div class="sim-control-group">
-                            <label for="riemannType">Tipo de Evaluación:</label>
+                            <label for="riemannType">Tipo de Rectángulos:</label>
                             <select id="riemannType" class="sim-select">
-                                <option value="midpoint">Punto Medio (Recomendado)</option>
+                                <option value="midpoint">Punto Medio (Más preciso)</option>
                                 <option value="left">Extremo Izquierdo</option>
                                 <option value="right">Extremo Derecho</option>
                             </select>
@@ -194,282 +435,20 @@
         </section>
 
         <!-- ====================================================================
-             TEMA 3: ÁREA BAJO LA CURVA
-             ==================================================================== -->
-        <section id="area-curva" class="content-section fade-in">
-            <h2>3. Área Bajo la Curva</h2>
-            <div class="card">
-                <p>Una de las aplicaciones más importantes de la integral definida es el cálculo del área de figuras geométricas irregulares delimitadas por funciones continuas.</p>
-
-                <div class="cases-grid">
-                    <div class="case-card">
-                        <h4>1. Área Sobre el Eje X <span class="badge badge-primary">f(x) ≥ 0</span></h4>
-                        <p class="text-sm text-muted">Cuando la curva está completamente por encima del eje de abscisas en \( [a, b] \):</p>
-                        <div class="formula-box-small">
-                            \[ A = \int_{a}^{b} f(x) \, dx \]
-                        </div>
-                    </div>
-
-                    <div class="case-card blue">
-                        <h4>2. Regiones Negativas <span class="badge badge-blue">|f(x)|</span></h4>
-                        <p class="text-sm text-muted">La integral da un área con signo. Para el área geométrica positiva total se toma el valor absoluto:</p>
-                        <div class="formula-box-small">
-                            \[ A = \int_{a}^{b} |f(x)| \, dx \]
-                        </div>
-                    </div>
-
-                    <div class="case-card purple">
-                        <h4>3. Área Entre Dos Curvas <span class="badge badge-purple">f(x) ≥ g(x)</span></h4>
-                        <p class="text-sm text-muted">Delimitada por dos funciones continuas: "curva superior menos curva inferior":</p>
-                        <div class="formula-box-small">
-                            \[ A = \int_{a}^{b} [f(x) - g(x)] \, dx \]
-                        </div>
-                    </div>
-                </div>
-
-                <div class="example-section mt-1">
-                    <h4>Ejemplo Resuelto: Área entre dos curvas</h4>
-                    <p class="math-step">Calcular el área de la región acotada por \( f(x) = 4 - x^2 \) y \( g(x) = x + 2 \).</p>
-                    
-                    <button class="btn-toggle" onclick="toggleSolution('solAreaCurva')">👁️ Mostrar Solución</button>
-                    <div id="solAreaCurva" class="solution-container">
-                        <div class="formula-box">
-                            \begin{align*}
-                            \textbf{Paso 1: Puntos de corte } & 4 - x^2 = x + 2 \implies x^2 + x - 2 = 0 \implies (x+2)(x-1) = 0 \\
-                            & \text{Límites de integración: } a = -2, \quad b = 1. \\[1ex]
-                            \textbf{Paso 2: Plantear integral } & A = \int_{-2}^{1} [(4 - x^2) - (x + 2)] \, dx = \int_{-2}^{1} (2 - x - x^2) \, dx \\[1ex]
-                            \textbf{Paso 3: Integrar } & = \left[ 2x - \frac{x^2}{2} - \frac{x^3}{3} \right]_{-2}^{1} \\[1ex]
-                            & = \left(2(1) - \frac{1}{2} - \frac{1}{3}\right) - \left(2(-2) - \frac{(-2)^2}{2} - \frac{(-2)^3}{3}\right) \\[1ex]
-                            & = \left(\frac{7}{6}\right) - \left(-4 - 2 + \frac{8}{3}\right) = \frac{7}{6} - \left(-\frac{10}{3}\right) = \frac{27}{6} = \frac{9}{2} = 4.5 \text{ u}^2
-                            \end{align*}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====================================================================
-             TEMA 4: PROPIEDADES DE LAS INTEGRALES
-             ==================================================================== -->
-        <section id="propiedades" class="content-section fade-in">
-            <h2>4. Propiedades de las Integrales</h2>
-            <div class="card">
-                <p>Las integrales poseen propiedades algebraicas fundamentales que simplifican el cálculo tanto para integrales indefinidas como definidas:</p>
-
-                <h3 class="mt-2">4.1. Propiedades de Linealidad</h3>
-                <div class="formula-box">
-                    \[ \int [c_1 f(x) \pm c_2 g(x)] \, dx = c_1 \int f(x) \, dx \pm c_2 \int g(x) \, dx \]
-                </div>
-
-                <h3 class="mt-2-5">4.2. Propiedades de la Integral Definida</h3>
-                <div class="cases-grid">
-                    <div class="case-card">
-                        <h4>1. Límites Idénticos</h4>
-                        <p class="text-sm text-muted">El área sobre un intervalo de ancho nulo es cero:</p>
-                        <div class="formula-box-small">
-                            \[ \int_{a}^{a} f(x) \, dx = 0 \]
-                        </div>
-                    </div>
-
-                    <div class="case-card blue">
-                        <h4>2. Inversión de Límites</h4>
-                        <p class="text-sm text-muted">Cambiar el sentido de integración invierte el signo:</p>
-                        <div class="formula-box-small">
-                            \[ \int_{b}^{a} f(x) \, dx = -\int_{a}^{b} f(x) \, dx \]
-                        </div>
-                    </div>
-
-                    <div class="case-card purple">
-                        <h4>3. Aditividad de Intervalos</h4>
-                        <p class="text-sm text-muted">Para cualquier punto intermedio \( c \):</p>
-                        <div class="formula-box-small">
-                            \[ \int_{a}^{b} f(x) \, dx = \int_{a}^{c} f(x) \, dx + \int_{c}^{b} f(x) \, dx \]
-                        </div>
-                    </div>
-
-                    <div class="case-card amber">
-                        <h4>4. Acotamiento y Dominancia</h4>
-                        <p class="text-sm text-muted">Si \( f(x) \le g(x) \) en \( [a, b] \):</p>
-                        <div class="formula-box-small">
-                            \[ \int_{a}^{b} f(x) \, dx \le \int_{a}^{b} g(x) \, dx \]
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====================================================================
-             TEMA 5: INTEGRALES DIRECTAS (INMEDIATAS)
-             ==================================================================== -->
-        <section id="integrales-directas" class="content-section fade-in">
-            <h2>5. Integrales Directas (Inmediatas)</h2>
-            <div class="card">
-                <p>Las <strong>integrales directas o inmediatas</strong> se resuelven reconociendo la fórmula estándar de la derivada correspondiente sin necesidad de transformaciones avanzadas.</p>
-
-                <div class="flashcard-grid mt-2">
-                    <!-- Tarjeta 1: Constante -->
-                    <div class="flashcard-container">
-                        <div class="flashcard">
-                            <div class="flashcard-front">
-                                <h3>Constante</h3>
-                                <div class="icon">🔢</div>
-                                <p class="text-sm text-muted mt-1">Pasa el cursor para ver la fórmula</p>
-                            </div>
-                            <div class="flashcard-back">
-                                <div class="card-section">
-                                    <h4>Fórmula:</h4>
-                                    <div class="formula-box-small">\[ \int k \, dx = kx + C \]</div>
-                                </div>
-                                <div class="card-section example-section">
-                                    <h4>Ejemplo:</h4>
-                                    <p class="math-step">\( \int 7 \, dx = 7x + C \)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 2: Potencia -->
-                    <div class="flashcard-container">
-                        <div class="flashcard">
-                            <div class="flashcard-front">
-                                <h3>Regla de Potencia</h3>
-                                <div class="icon">📈</div>
-                                <p class="text-sm text-muted mt-1">Para todo \( n \neq -1 \)</p>
-                            </div>
-                            <div class="flashcard-back">
-                                <div class="card-section">
-                                    <h4>Fórmula:</h4>
-                                    <div class="formula-box-small">\[ \int x^n \, dx = \frac{x^{n+1}}{n+1} + C \]</div>
-                                </div>
-                                <div class="card-section example-section">
-                                    <h4>Ejemplo:</h4>
-                                    <p class="math-step">\( \int x^4 \, dx = \frac{x^5}{5} + C \)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 3: Exponencial -->
-                    <div class="flashcard-container">
-                        <div class="flashcard">
-                            <div class="flashcard-front">
-                                <h3>Exponencial Natural</h3>
-                                <div class="icon">⚡</div>
-                                <p class="text-sm text-muted mt-1">La función idéntica</p>
-                            </div>
-                            <div class="flashcard-back">
-                                <div class="card-section">
-                                    <h4>Fórmula:</h4>
-                                    <div class="formula-box-small">\[ \int e^x \, dx = e^x + C \]</div>
-                                </div>
-                                <div class="card-section example-section">
-                                    <h4>Ejemplo:</h4>
-                                    <p class="math-step">\( \int 3e^x \, dx = 3e^x + C \)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 4: Logarítmica -->
-                    <div class="flashcard-container">
-                        <div class="flashcard">
-                            <div class="flashcard-front">
-                                <h3>Potencia -1 (Logaritmo)</h3>
-                                <div class="icon">🔍</div>
-                                <p class="text-sm text-muted mt-1">Caso singular \( 1/x \)</p>
-                            </div>
-                            <div class="flashcard-back">
-                                <div class="card-section">
-                                    <h4>Fórmula:</h4>
-                                    <div class="formula-box-small">\[ \int \frac{1}{x} \, dx = \ln|x| + C \]</div>
-                                </div>
-                                <div class="card-section example-section">
-                                    <h4>Ejemplo:</h4>
-                                    <p class="math-step">\( \int \frac{5}{x} \, dx = 5\ln|x| + C \)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====================================================================
-             TEMA 6: SUSTITUCIÓN Y CAMBIO DE VARIABLE
-             ==================================================================== -->
-        <section id="sustitucion" class="content-section fade-in">
-            <h2>6. Sustitución y Cambio de Variable</h2>
-            <div class="card">
-                <p>El <strong>método de sustitución</strong> (o cambio de variable) es la regla de la cadena aplicada a la integración. Es ideal cuando el integrando contiene una función compuesta \( f(g(x)) \) multiplicada por la derivada de su argumento \( g'(x) \).</p>
-
-                <div class="formula-box">
-                    \[ \int f(g(x)) \, g'(x) \, dx = \int f(u) \, du \quad \text{haciendo } u = g(x), \quad du = g'(x)\,dx \]
-                </div>
-
-                <h3 class="mt-2">Algoritmo de Aplicación Paso a Paso</h3>
-                <div class="steps-timeline">
-                    <div class="step-card">
-                        <div class="step-badge">1</div>
-                        <div class="step-body">
-                            <h4>Identificar \( u \)</h4>
-                            <p>Elegir la función interior más compleja (dentro de un radical, exponente, denominador o función trigonométrica).</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-badge">2</div>
-                        <div class="step-body">
-                            <h4>Diferenciar para hallar \( du \)</h4>
-                            <p>Calcular \( du = u'(x)\,dx \) y despejar o ajustar constantes numéricas que hagan falta.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-badge">3</div>
-                        <div class="step-body">
-                            <h4>Sustituir e Integrar</h4>
-                            <p>Reescribir la integral completamente en términos de \( u \) (no deben quedar términos con \( x \)) y resolver la integral directa resultante.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-badge">4</div>
-                        <div class="step-body">
-                            <h4>Regresar a la variable original \( x \)</h4>
-                            <p>Reemplazar \( u \) por \( g(x) \) (o si la integral es definida, cambiar los límites evaluando \( u(a) \) y \( u(b) \)).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="example-section mt-1">
-                    <h4>Ejemplo Resuelto: Cambio de Variable</h4>
-                    <p class="math-step">Resolver la integral: \( \int 2x \, e^{x^2} \, dx \)</p>
-                    <button class="btn-toggle" onclick="toggleSolution('solSustitucion')">👁️ Mostrar Solución</button>
-                    <div id="solSustitucion" class="solution-container">
-                        <div class="formula-box">
-                            \begin{align*}
-                            \text{Sea } u &= x^2 \implies du = 2x \, dx \\
-                            \int 2x \, e^{x^2} \, dx &= \int e^u \, du \\
-                            &= e^u + C \\
-                            &= e^{x^2} + C
-                            \end{align*}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====================================================================
              TEMA 7: INTEGRACIÓN POR PARTES
              ==================================================================== -->
         <section id="por-partes" class="content-section fade-in">
             <h2>7. Integración por Partes</h2>
             <div class="card">
-                <p>Este método se deduce directamente de la derivada del producto de dos funciones diferenciables: \( d(uv) = u\,dv + v\,du \). Integrando ambos miembros obtenemos la fórmula clásica:</p>
+                <span class="badge badge-purple" style="margin-bottom: 0.6rem;">🔴 Método avanzado para productos</span>
+                <p class="mt-0-5">Se usa cuando tenemos una multiplicación de dos funciones distintas que no se pueden resolver por sustitución simple (como un polinomio multiplicado por un coseno, o \( x \cdot e^x \)):</p>
 
                 <div class="formula-box">
                     \[ \int u \, dv = u \cdot v - \int v \, du \]
                 </div>
 
-                <h3 class="mt-2">Regla Mnemotécnica: ILATE para elegir \( u \)</h3>
-                <p>Para elegir con éxito cuál función será \( u \) (la que se deriva) y cuál será \( dv \) (la que se integra), se sigue el orden de prioridad de arriba hacia abajo:</p>
+                <h3 class="mt-2">¿Cómo saber cuál es \( u \)? Regla ILATE</h3>
+                <p>La función que aparezca primero en esta lista se elige como \( u \) (la que se deriva):</p>
 
                 <div class="ilate-grid">
                     <div class="ilate-item">
@@ -480,36 +459,34 @@
                     <div class="ilate-item">
                         <div class="ilate-letter">L</div>
                         <div class="ilate-name">Logarítmicas</div>
-                        <div class="ilate-example">\(\ln(x), \log_a(x)\)</div>
+                        <div class="ilate-example">\(\ln(x), \log(x)\)</div>
                     </div>
                     <div class="ilate-item">
                         <div class="ilate-letter">A</div>
                         <div class="ilate-name">Algebraicas</div>
-                        <div class="ilate-example">\(x^2, 3x+1, \sqrt{x}\)</div>
+                        <div class="ilate-example">\(x^2, 3x, \sqrt{x}\)</div>
                     </div>
                     <div class="ilate-item">
                         <div class="ilate-letter">T</div>
                         <div class="ilate-name">Trigonométricas</div>
-                        <div class="ilate-example">\(\sin(x), \cos(x), \sec(x)\)</div>
+                        <div class="ilate-example">\(\sin(x), \cos(x)\)</div>
                     </div>
                     <div class="ilate-item">
                         <div class="ilate-letter">E</div>
                         <div class="ilate-name">Exponenciales</div>
-                        <div class="ilate-example">\(e^x, 2^x, e^{-3x}\)</div>
+                        <div class="ilate-example">\(e^x, 3^x\)</div>
                     </div>
                 </div>
 
                 <div class="example-section mt-1">
                     <h4>Ejemplo Resuelto: Por Partes</h4>
-                    <p class="math-step">Resolver la integral: \( \int x \, \cos(x) \, dx \)</p>
+                    <p class="math-step">Resolver: \( \int x \, \cos(x) \, dx \)</p>
                     <button class="btn-toggle" onclick="toggleSolution('solPartes')">👁️ Mostrar Solución</button>
                     <div id="solPartes" class="solution-container">
                         <div class="formula-box">
                             \begin{align*}
-                            \text{Por ILATE, la algebraica } x \text{ tiene prioridad para } u: \\
-                            u &= x \implies du = dx \\
-                            dv &= \cos(x) \, dx \implies v = \int \cos(x) \, dx = \sin(x) \\[1ex]
-                            \text{Aplicando la fórmula } \int u \, dv &= uv - \int v \, du: \\
+                            \text{Por ILATE, la algebraica } x \text{ es } u: & \quad u = x \implies du = dx \\
+                            & \quad dv = \cos(x) \, dx \implies v = \sin(x) \\[1ex]
                             \int x \cos(x) \, dx &= x \sin(x) - \int \sin(x) \, dx \\
                             &= x \sin(x) - (-\cos(x)) + C \\
                             &= x \sin(x) + \cos(x) + C
@@ -526,37 +503,29 @@
         <section id="sust-trigonometrica" class="content-section fade-in">
             <h2>8. Sustitución Trigonométrica</h2>
             <div class="card">
-                <p>La <strong>sustitución trigonométrica</strong> permite eliminar radicales de binomios cuadráticos (\( \sqrt{a^2 - x^2} \), \( \sqrt{a^2 + x^2} \), \( \sqrt{x^2 - a^2} \)) aprovechando las identidades pitagóricas fundamentales. Se clasifican en 3 casos canónicos:</p>
+                <span class="badge badge-purple" style="margin-bottom: 0.6rem;">🔴 Integrales con radicales</span>
+                <p class="mt-0-5">Permite eliminar raíces cuadradas de binomios con las identidades de Pitágoras dividiéndose en 3 casos canónicos:</p>
 
                 <div class="cases-grid">
                     <div class="case-card">
                         <h4>Caso 1: \(\sqrt{a^2 - x^2}\) <span class="badge badge-primary">Seno</span></h4>
                         <p class="text-sm text-muted"><strong>Sustitución:</strong> \( x = a \sin(\theta) \)</p>
                         <p class="text-sm text-muted"><strong>Diferencial:</strong> \( dx = a \cos(\theta) \, d\theta \)</p>
-                        <div class="formula-box-small">
-                            \[ \sqrt{a^2 - x^2} = a \cos(\theta) \]
-                        </div>
-                        <p class="text-sm text-muted mt-1">Identidad: \( 1 - \sin^2(\theta) = \cos^2(\theta) \)</p>
+                        <div class="formula-box-small">\[ \sqrt{a^2 - x^2} = a \cos(\theta) \]</div>
                     </div>
 
                     <div class="case-card blue">
                         <h4>Caso 2: \(\sqrt{a^2 + x^2}\) <span class="badge badge-blue">Tangente</span></h4>
                         <p class="text-sm text-muted"><strong>Sustitución:</strong> \( x = a \tan(\theta) \)</p>
                         <p class="text-sm text-muted"><strong>Diferencial:</strong> \( dx = a \sec^2(\theta) \, d\theta \)</p>
-                        <div class="formula-box-small">
-                            \[ \sqrt{a^2 + x^2} = a \sec(\theta) \]
-                        </div>
-                        <p class="text-sm text-muted mt-1">Identidad: \( 1 + \tan^2(\theta) = \sec^2(\theta) \)</p>
+                        <div class="formula-box-small">\[ \sqrt{a^2 + x^2} = a \sec(\theta) \]</div>
                     </div>
 
                     <div class="case-card purple">
                         <h4>Caso 3: \(\sqrt{x^2 - a^2}\) <span class="badge badge-purple">Secante</span></h4>
                         <p class="text-sm text-muted"><strong>Sustitución:</strong> \( x = a \sec(\theta) \)</p>
                         <p class="text-sm text-muted"><strong>Diferencial:</strong> \( dx = a \sec(\theta)\tan(\theta) \, d\theta \)</p>
-                        <div class="formula-box-small">
-                            \[ \sqrt{x^2 - a^2} = a \tan(\theta) \]
-                        </div>
-                        <p class="text-sm text-muted mt-1">Identidad: \( \sec^2(\theta) - 1 = \tan^2(\theta) \)</p>
+                        <div class="formula-box-small">\[ \sqrt{x^2 - a^2} = a \tan(\theta) \]</div>
                     </div>
                 </div>
 
@@ -567,13 +536,9 @@
                     <div id="solSustTrig" class="solution-container">
                         <div class="formula-box">
                             \begin{align*}
-                            \text{Corresponde al Caso 1 con } a^2 = 9 \implies a = 3: \\
-                            x &= 3 \sin(\theta) \implies dx = 3 \cos(\theta) \, d\theta \\
-                            \sqrt{9 - x^2} &= \sqrt{9 - 9\sin^2(\theta)} = 3\cos(\theta) \\[1ex]
-                            \int \frac{1}{\sqrt{9 - x^2}} \, dx &= \int \frac{3 \cos(\theta)}{3 \cos(\theta)} \, d\theta = \int 1 \, d\theta \\
-                            &= \theta + C \\[1ex]
-                            \text{Como } x = 3\sin(\theta) &\implies \sin(\theta) = \frac{x}{3} \implies \theta = \arcsin\left(\frac{x}{3}\right) \\
-                            &= \arcsin\left(\frac{x}{3}\right) + C
+                            \text{Caso 1 con } a = 3: & \quad x = 3\sin(\theta), \quad dx = 3\cos(\theta)d\theta \\
+                            \int \frac{1}{\sqrt{9 - x^2}} \, dx &= \int \frac{3\cos(\theta)}{3\cos(\theta)} \, d\theta = \int 1 \, d\theta = \theta + C \\
+                            \text{Como } \sin(\theta) = \frac{x}{3} &\implies \theta = \arcsin\left(\frac{x}{3}\right) + C
                             \end{align*}
                         </div>
                     </div>
@@ -587,57 +552,37 @@
         <section id="fracciones-parciales" class="content-section fade-in">
             <h2>9. Fracciones Parciales</h2>
             <div class="card">
-                <p>El método de <strong>fracciones parciales</strong> descompone una función racional propia \( \frac{P(x)}{Q(x)} \) (donde el grado del numerador es estrictamente menor al grado del denominador) en una suma de fracciones más simples con denominadores de primer y segundo grado.</p>
+                <span class="badge badge-purple" style="margin-bottom: 0.6rem;">🔴 Fracciones de polinomios</span>
+                <p class="mt-0-5">Descompone una fracción racional propia \( \frac{P(x)}{Q(x)} \) en una suma de fracciones más simples de integrar con logaritmos o arcotangentes:</p>
 
-                <h3 class="mt-2">Los 4 Casos de Descomposición</h3>
                 <div class="cases-grid">
                     <div class="case-card">
-                        <h4>1. Factores Lineales Distintos</h4>
-                        <p class="text-sm text-muted">Denominador factorizado como \( (ax+b)(cx+d) \):</p>
-                        <div class="formula-box-small">
-                            \[ \frac{P(x)}{(ax+b)(cx+d)} = \frac{A}{ax+b} + \frac{B}{cx+d} \]
-                        </div>
+                        <h4>1. Lineales Distintos</h4>
+                        <div class="formula-box-small">\[ \frac{P(x)}{(x-a)(x-b)} = \frac{A}{x-a} + \frac{B}{x-b} \]</div>
                     </div>
 
                     <div class="case-card blue">
-                        <h4>2. Factores Lineales Repetidos</h4>
-                        <p class="text-sm text-muted">Denominador con potencia \( (ax+b)^k \):</p>
-                        <div class="formula-box-small">
-                            \[ \frac{A_1}{ax+b} + \frac{A_2}{(ax+b)^2} + \dots + \frac{A_k}{(ax+b)^k} \]
-                        </div>
+                        <h4>2. Lineales Repetidos</h4>
+                        <div class="formula-box-small">\[ \frac{P(x)}{(x-a)^2} = \frac{A}{x-a} + \frac{B}{(x-a)^2} \]</div>
                     </div>
 
                     <div class="case-card purple">
-                        <h4>3. Factor Cuadrático Irreducible</h4>
-                        <p class="text-sm text-muted">Término de la forma \( ax^2 + bx + c \) con \( b^2 - 4ac < 0 \):</p>
-                        <div class="formula-box-small">
-                            \[ \frac{Ax + B}{ax^2 + bx + c} \]
-                        </div>
-                    </div>
-
-                    <div class="case-card amber">
-                        <h4>4. Cuadráticos Repetidos</h4>
-                        <p class="text-sm text-muted">Término \( (ax^2+bx+c)^k \):</p>
-                        <div class="formula-box-small">
-                            \[ \frac{A_1 x + B_1}{ax^2+bx+c} + \frac{A_2 x + B_2}{(ax^2+bx+c)^2} \]
-                        </div>
+                        <h4>3. Cuadrático Irreducible</h4>
+                        <div class="formula-box-small">\[ \frac{Ax + B}{ax^2 + bx + c} \]</div>
                     </div>
                 </div>
 
                 <div class="example-section mt-1">
-                    <h4>Ejemplo Resuelto: Factores Lineales Distintos</h4>
-                    <p class="math-step">Resolver la integral: \( \int \frac{5x - 3}{x^2 - 2x - 3} \, dx \)</p>
+                    <h4>Ejemplo Resuelto: Fracciones Parciales</h4>
+                    <p class="math-step">Resolver: \( \int \frac{5x - 3}{(x - 3)(x + 1)} \, dx \)</p>
                     <button class="btn-toggle" onclick="toggleSolution('solFracciones')">👁️ Mostrar Solución</button>
                     <div id="solFracciones" class="solution-container">
                         <div class="formula-box">
                             \begin{align*}
-                            \textbf{Paso 1: Factorizar el denominador: } & x^2 - 2x - 3 = (x - 3)(x + 1) \\[1ex]
-                            \textbf{Paso 2: Proponer descomposición: } & \frac{5x - 3}{(x - 3)(x + 1)} = \frac{A}{x - 3} + \frac{B}{x + 1} \\[1ex]
-                            \textbf{Paso 3: Multiplicar por el denominador común: } & 5x - 3 = A(x + 1) + B(x - 3) \\[1ex]
-                            \text{Para } x = 3: & \quad 5(3) - 3 = A(4) \implies 12 = 4A \implies A = 3 \\
-                            \text{Para } x = -1: & \quad 5(-1) - 3 = B(-4) \implies -8 = -4B \implies B = 2 \\[1ex]
-                            \textbf{Paso 4: Integrar cada fracción: } & \int \left( \frac{3}{x - 3} + \frac{2}{x + 1} \right) \, dx \\
-                            &= 3\ln|x - 3| + 2\ln|x + 1| + C
+                            \frac{5x - 3}{(x - 3)(x + 1)} &= \frac{A}{x - 3} + \frac{B}{x + 1} \implies 5x - 3 = A(x+1) + B(x-3) \\
+                            \text{Evaluando en } x = 3: & \quad 12 = 4A \implies A = 3 \\
+                            \text{Evaluando en } x = -1: & \quad -8 = -4B \implies B = 2 \\[1ex]
+                            \int \left(\frac{3}{x - 3} + \frac{2}{x + 1}\right) \, dx &= 3\ln|x - 3| + 2\ln|x + 1| + C
                             \end{align*}
                         </div>
                     </div>
@@ -651,57 +596,23 @@
         <section id="edo-separables" class="content-section fade-in">
             <h2>10. EDO de Variables Separables</h2>
             <div class="card">
-                <p>Una <strong>Ecuación Diferencial Ordinaria (EDO)</strong> de primer orden relaciona una variable independiente \( x \), una función dependiente \( y(x) \) y su derivada \( \frac{dy}{dx} \). Se dice que es de <strong>variables separables</strong> si puede factorizarse de tal forma que todos los términos de \( y \) queden multiplicados por \( dy \) y todos los términos de \( x \) queden multiplicados por \( dx \):</p>
+                <span class="badge badge-amber" style="margin-bottom: 0.6rem;">⚙️ Ecuaciones Diferenciales</span>
+                <p class="mt-0-5">Una ecuación diferencial ordinaria de 1er orden relaciona \( x \), \( y \) y su derivada \( \frac{dy}{dx} \). Se resuelve separando todas las \( y \) a un lado con \( dy \) y todas las \( x \) al otro lado con \( dx \), e integrando ambos miembros:</p>
 
                 <div class="formula-box">
-                    \[ \frac{dy}{dx} = g(x) \cdot h(y) \quad \iff \quad \frac{1}{h(y)} \, dy = g(x) \, dx \]
-                </div>
-
-                <h3 class="mt-2">Método de Solución</h3>
-                <div class="steps-timeline">
-                    <div class="step-card">
-                        <div class="step-badge">1</div>
-                        <div class="step-body">
-                            <h4>Separar Variables</h4>
-                            <p>Manipular algebraicamente la igualdad para reunir todas las funciones de \( y \) con el diferencial \( dy \) a la izquierda, y las funciones de \( x \) con \( dx \) a la derecha.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-badge">2</div>
-                        <div class="step-body">
-                            <h4>Integrar Ambos Lados</h4>
-                            <p>Aplicar el operador integral a cada miembro de la ecuación: \( \int \frac{1}{h(y)} \, dy = \int g(x) \, dx + C \).</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-badge">3</div>
-                        <div class="step-body">
-                            <h4>Solución General y Despeje</h4>
-                            <p>Obtener la solución implícita o despejar \( y(x) \) para obtener la <strong>solución general</strong> explícita.</p>
-                        </div>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-badge">4</div>
-                        <div class="step-body">
-                            <h4>Condición Inicial (Problema de Valor Inicial PVI)</h4>
-                            <p>Si se proporciona un punto \( y(x_0) = y_0 \), sustituir para calcular el valor único de la constante \( C \) y hallar la <strong>solución particular</strong>.</p>
-                        </div>
-                    </div>
+                    \[ \frac{dy}{dx} = g(x) \cdot h(y) \quad \iff \quad \int \frac{1}{h(y)} \, dy = \int g(x) \, dx + C \]
                 </div>
 
                 <div class="example-section mt-1">
                     <h4>Ejemplo Resuelto: EDO con Condición Inicial</h4>
-                    <p class="math-step">Resolver el PVI: \( \frac{dy}{dx} = 2x y \), con la condición inicial \( y(0) = 5 \).</p>
+                    <p class="math-step">Resolver el Problema de Valor Inicial: \( \frac{dy}{dx} = 2xy \), con \( y(0) = 5 \).</p>
                     <button class="btn-toggle" onclick="toggleSolution('solEDO')">👁️ Mostrar Solución</button>
                     <div id="solEDO" class="solution-container">
                         <div class="formula-box">
                             \begin{align*}
-                            \textbf{Paso 1: Separar variables } & \frac{1}{y} \, dy = 2x \, dx \\[1ex]
-                            \textbf{Paso 2: Integrar ambos lados } & \int \frac{1}{y} \, dy = \int 2x \, dx \\
-                            & \ln|y| = x^2 + C_1 \\[1ex]
-                            \textbf{Paso 3: Despejar } y & |y| = e^{x^2 + C_1} = e^{C_1} \cdot e^{x^2} \\
-                            & y(x) = C e^{x^2} \quad \text{(Solución General)} \\[1ex]
-                            \textbf{Paso 4: Aplicar condición inicial } y(0) = 5: & 5 = C e^{0^2} = C(1) \implies C = 5 \\[1ex]
+                            \frac{1}{y} \, dy &= 2x \, dx \implies \int \frac{1}{y} \, dy = \int 2x \, dx \\
+                            \ln|y| &= x^2 + C_1 \implies y(x) = C e^{x^2} \quad \text{(Solución General)} \\[1ex]
+                            \text{Condición inicial } y(0) = 5: & \quad 5 = C e^0 \implies C = 5 \\
                             \textbf{Solución Particular: } & \mathbf{y(x) = 5 e^{x^2}}
                             \end{align*}
                         </div>
@@ -714,21 +625,20 @@
              TEMA 11: TALLER DE EJERCICIOS PRÁCTICOS
              ==================================================================== -->
         <section id="ejercicios-taller" class="content-section fade-in">
-            <h2>11. Taller de Ejercicios Prácticos Combinados</h2>
+            <h2>11. Taller de Ejercicios Prácticos</h2>
             <div class="card">
-                <p>Pon a prueba tus habilidades resolviendo estos ejercicios representativos de cada método del curso. ¡Intenta resolverlos en papel antes de consultar la solución!</p>
+                <span class="badge badge-primary" style="margin-bottom: 0.6rem;">🎓 Evaluación Formativa</span>
+                <p class="mt-0-5">Ponte a prueba resolviendo estos ejercicios que integran las técnicas del curso:</p>
 
                 <!-- Ejercicio 1 -->
                 <h3 class="mt-2-5">🟢 Ejercicio 1: Sustitución Algebraica</h3>
                 <p>Calcular: \( \int x \sqrt{x - 1} \, dx \)</p>
                 <button class="btn-toggle" onclick="toggleSolution('solTaller1')">👁️ Mostrar Solución</button>
                 <div id="solTaller1" class="solution-container">
-                    <p class="mt-1"><strong>Solución paso a paso:</strong></p>
                     <div class="formula-box">
                         \begin{align*}
-                        \text{Hacemos } u &= x - 1 \implies x = u + 1 \quad \text{y} \quad dx = du \\
-                        \int x \sqrt{x - 1} \, dx &= \int (u + 1) \sqrt{u} \, du = \int (u^{3/2} + u^{1/2}) \, du \\
-                        &= \frac{u^{5/2}}{5/2} + \frac{u^{3/2}}{3/2} + C \\
+                        \text{Sea } u &= x - 1 \implies x = u + 1, \quad dx = du \\
+                        \int (u + 1)\sqrt{u} \, du &= \int (u^{3/2} + u^{1/2}) \, du = \frac{2}{5}u^{5/2} + \frac{2}{3}u^{3/2} + C \\
                         &= \frac{2}{5}(x - 1)^{5/2} + \frac{2}{3}(x - 1)^{3/2} + C
                         \end{align*}
                     </div>
@@ -739,35 +649,24 @@
                 <p>Calcular: \( \int e^x \sin(x) \, dx \)</p>
                 <button class="btn-toggle" onclick="toggleSolution('solTaller2')">👁️ Mostrar Solución</button>
                 <div id="solTaller2" class="solution-container">
-                    <p class="mt-1"><strong>Solución paso a paso:</strong></p>
                     <div class="formula-box">
                         \begin{align*}
-                        \text{1ra Integración por partes: } & u = \sin(x) \implies du = \cos(x)dx \\
-                        & dv = e^x dx \implies v = e^x \\
-                        I = \int e^x \sin(x)dx &= e^x \sin(x) - \int e^x \cos(x) \, dx \\[1ex]
-                        \text{2da Integración por partes: } & u = \cos(x) \implies du = -\sin(x)dx \\
-                        & dv = e^x dx \implies v = e^x \\
-                        \int e^x \cos(x)dx &= e^x \cos(x) - \int e^x(-\sin(x))dx = e^x\cos(x) + I \\[1ex]
-                        \text{Sustituyendo: } & I = e^x \sin(x) - [e^x \cos(x) + I] \\
-                        2I &= e^x(\sin(x) - \cos(x)) \\
-                        I &= \frac{e^x(\sin(x) - \cos(x))}{2} + C
+                        I &= e^x\sin(x) - \int e^x\cos(x)dx \\
+                        &= e^x\sin(x) - [e^x\cos(x) + I] \\
+                        2I &= e^x(\sin(x) - \cos(x)) \implies I = \frac{e^x(\sin(x) - \cos(x))}{2} + C
                         \end{align*}
                     </div>
                 </div>
 
                 <!-- Ejercicio 3 -->
-                <h3 class="mt-2-5">🔴 Ejercicio 3: EDO de Variables Separables</h3>
-                <p>Resolver: \( \frac{dy}{dx} = \frac{x}{y} \), con condición \( y(0) = -3 \)</p>
+                <h3 class="mt-2-5">🔴 Ejercicio 3: EDO con Condición Inicial</h3>
+                <p>Resolver: \( \frac{dy}{dx} = \frac{x}{y} \), con \( y(0) = -3 \)</p>
                 <button class="btn-toggle" onclick="toggleSolution('solTaller3')">👁️ Mostrar Solución</button>
                 <div id="solTaller3" class="solution-container">
-                    <p class="mt-1"><strong>Solución paso a paso:</strong></p>
                     <div class="formula-box">
                         \begin{align*}
-                        y \, dy &= x \, dx \\
-                        \int y \, dy &= \int x \, dx \\
-                        \frac{y^2}{2} &= \frac{x^2}{2} + C_1 \implies y^2 - x^2 = C \\[1ex]
-                        \text{Aplicando } y(0) = -3: & \quad (-3)^2 - 0^2 = C \implies C = 9 \\
-                        y^2 &= x^2 + 9 \implies y = -\sqrt{x^2 + 9} \quad \text{(se elige la raíz negativa pues } y(0)=-3)
+                        y \, dy &= x \, dx \implies \frac{y^2}{2} = \frac{x^2}{2} + C_1 \implies y^2 - x^2 = C \\
+                        (-3)^2 - 0^2 &= C \implies C = 9 \implies y = -\sqrt{x^2 + 9}
                         \end{align*}
                     </div>
                 </div>
@@ -779,7 +678,7 @@
     <!-- Pie de página -->
     <footer>
         <div class="container">
-            <p>Guía Educativa de Cálculo Integral y Ecuaciones Diferenciales Ordinarias • 2026</p>
+            <p>Guía Educativa de Cálculo Integral y EDO • 2026</p>
         </div>
     </footer>
 

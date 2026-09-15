@@ -425,11 +425,48 @@ footer {
 
 .formula-box-small {
     background-color: #121212;
-    padding: 0.5rem;
-    border-radius: 5px;
-    margin-top: 0;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin: 0.8rem 0 0 0;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     border-left: 3px solid var(--primary-color);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* Control de desbordamiento en fórmulas matemáticas MathJax */
+mjx-container[jax="SVG"][display="true"] {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    margin: 0.4rem 0 !important;
+    padding: 0.2rem 0 !important;
+}
+
+mjx-container[jax="SVG"][display="true"] > svg {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.formula-box::-webkit-scrollbar,
+.formula-box-small::-webkit-scrollbar,
+mjx-container::-webkit-scrollbar {
+    height: 4px;
+}
+
+.formula-box::-webkit-scrollbar-thumb,
+.formula-box-small::-webkit-scrollbar-thumb,
+mjx-container::-webkit-scrollbar-thumb {
+    background: rgba(74, 222, 128, 0.4);
+    border-radius: 4px;
+}
+
+.formula-box::-webkit-scrollbar-track,
+.formula-box-small::-webkit-scrollbar-track,
+mjx-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
 }
 
 /* ==========================================================================
@@ -738,12 +775,15 @@ footer {
 
 .step-card {
     display: flex;
+    align-items: flex-start;
     gap: 1.2rem;
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 8px;
     padding: 1.2rem;
     transition: transform 0.2s ease, border-color 0.2s ease;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .step-card:hover {
@@ -764,6 +804,14 @@ footer {
     justify-content: center;
     font-weight: 700;
     font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.step-body {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .step-body h4 {
@@ -908,7 +956,9 @@ footer {
     .content-section h2 { font-size: 1.5rem; }
     .container { padding: 0 1.2rem; }
     .card { padding: 1.5rem; }
-    .formula-box, .formula-box-small { font-size: 1rem; padding: 1rem; }
+    .formula-box { font-size: 1rem; padding: 1rem; }
+    .formula-box-small { font-size: 0.95rem; padding: 0.6rem 0.8rem; }
+    .step-card { padding: 1rem; gap: 0.8rem; }
     
     .mobile-menu-btn { display: block; }
     

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Derivadas | Guía Educativa</title>
+    <link rel="icon" href="../img/favicon.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/styles.css"> 
+    
+    <!-- MathJax en modo SVG -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">📘 Derivadas</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">⬅️ Volver al Inicio</a></li>
+                <li><a href="trigonometria.html">📐 Trigonometría</a></li>
+                <li><a href="formulario.html">📝 Formulario</a></li>
+                <li><a href="quiz.html" class="text-primary">🎓 Quiz</a></li>
+                <li><a href="../../index.html" class="nav-switch-btn" style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.35); padding: 0.35rem 0.85rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block;">📗 Integrales</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1>Examen Final de Derivadas</h1>
+            <p>Pon a prueba tus conocimientos interactivos. ¿Estás listo para el reto?</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Contenedor del Quiz -->
+        <div id="quiz-container" class="card quiz-box fade-in">
+            <div class="quiz-header">
+                <h2 class="text-primary text-center">Autoevaluación</h2>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <p id="question-tracker" class="text-muted text-center mb-1">Pregunta 1 de 10</p>
+            </div>
+
+            <div id="question-container" class="mt-2">
+                <h3 id="question-text" class="mb-2 text-center">Cargando pregunta...</h3>
+                <div id="options-container" class="options-grid">
+                    <!-- Opciones inyectadas por JS -->
+                </div>
+            </div>
+
+            <div id="feedback-container" class="feedback-box hidden">
+                <!-- Feedback inyectado por JS -->
+            </div>
+
+            <div class="text-center mt-2 hidden" id="next-btn-container">
+                <button id="btn-next" class="btn-primary m-0">Siguiente Pregunta ➡️</button>
+            </div>
+        </div>
+
+        <!-- Contenedor de Resultados -->
+        <div id="result-container" class="card text-center hidden fade-in">
+            <h2 class="text-primary mb-2">¡Examen Completado!</h2>
+            <div class="score-circle mb-2">
+                <span id="final-score">0/10</span>
+            </div>
+            <p id="result-message" class="mb-2 text-muted"></p>
+            <div class="flex-center mt-2">
+                <a href="../index.html" class="btn-toggle m-0">🏠 Volver al Inicio</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Creado para propósitos educativos. 2026</p>
+        </div>
+    </footer>
+
+    <!-- Cargamos nuestro script donde estará la lógica -->
+    <script src="../js/script.js"></script>
+</body>
+</html>

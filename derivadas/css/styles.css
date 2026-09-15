@@ -4,18 +4,18 @@
 :root {
     /* Fondo principal: Gris carbón muy oscuro y elegante */
     --bg-color: #121212;
-    /* Color de texto principal: Gris claro suave */
+    /* Color de texto principal: Gris claro suave (no blanco puro) para no deslumbrar */
     --text-color: #e0e0e0;
     /* Texto secundario para descripciones */
     --text-muted: #a0a0a0;
 
     /* Colores de Acento */
-    /* Verde claro o esmeralda para temas de integrales (distinto al azul de derivadas) */
-    --primary-color: #4ade80;
-    /* Verde oscuro para bordes y detalles sutiles */
-    --primary-light: #14532d;
+    /* Azul claro luminoso para títulos y enlaces (resalta hermoso en oscuro) */
+    --primary-color: #64b5f6;
+    /* Azul oscuro para bordes y detalles sutiles */
+    --primary-light: #1e3a5f;
 
-    /* Gris oscuro mate para los recuadros */
+    /* Gris oscuro mate para los recuadros (un poco más claro que el fondo principal) */
     --card-bg: #1e1e1e;
     /* Sombra negra y suave para dar profundidad a las tarjetas */
     --shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -35,6 +35,7 @@
 
 html {
     scroll-behavior: smooth;
+    /* Para que al hacer clic en el menú baje suavemente */
 }
 
 body {
@@ -55,15 +56,15 @@ body::before {
     height: 100%;
     z-index: -1;
     
-    /* Textura matemática sigilosa (gradiente oscuro elegante) */
+    /* Textura matemática sigilosa */
     background-image:
-        linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.95)),
-        url("../img/fondo_matematico.jpg");
+        linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.93)),
+        url("../img/fondo_matematico.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     
-    /* Envía esta capa a la tarjeta gráfica */
+    /* Envía esta capa a la tarjeta gráfica (soluciona el lag) */
     transform: translateZ(0);
     will-change: transform;
 }
@@ -75,7 +76,7 @@ body::before {
     background-color: rgba(30, 30, 30, 0.7); /* Transparencia para el efecto cristal */
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px); /* Efecto cristal (Glassmorphism) */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Borde sutil */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
@@ -97,7 +98,7 @@ body::before {
     color: var(--primary-color);
     text-decoration: none;
     letter-spacing: -0.5px;
-    text-shadow: 0 0 15px rgba(74, 222, 128, 0.3); /* Resplandor neón */
+    text-shadow: 0 0 15px rgba(100, 181, 246, 0.3); /* Resplandor neón */
     transition: transform 0.3s ease;
 }
 
@@ -132,7 +133,7 @@ body::before {
     background-color: var(--primary-color);
     transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     border-radius: 2px;
-    box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+    box-shadow: 0 0 8px rgba(100, 181, 246, 0.6);
 }
 
 .nav-menu a:hover {
@@ -183,13 +184,13 @@ body::before {
 }
 
 .dropdown-content a::after {
-    display: none;
+    display: none; /* Quitamos la rayita animada dentro del dropdown */
 }
 
 .dropdown-content a:hover {
-    background-color: rgba(74, 222, 128, 0.15);
+    background-color: rgba(100, 181, 246, 0.15);
     color: var(--primary-color);
-    padding-left: 25px;
+    padding-left: 25px; /* Pequeño empuje al hacer hover */
 }
 
 .dropdown:hover .dropdown-content {
@@ -207,6 +208,7 @@ body::before {
    ========================================================================== */
 .container {
     max-width: 800px;
+    /* Ancho óptimo para lectura, no muy ancho */
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -239,12 +241,14 @@ body::before {
     padding-bottom: 0.5rem;
 }
 
+/* Tarjetas (Cards) para contener la información matemática */
 .card {
     background-color: var(--card-bg);
     border-radius: 8px;
     padding: 2rem;
     box-shadow: var(--shadow);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Borde sutil para modo oscuro */
 }
 
 .content-section h3 {
@@ -262,7 +266,6 @@ body::before {
     border-radius: 0 8px 8px 0;
     overflow-x: auto;
     font-size: 1.2rem;
-    color: #e0e0e0;
 }
 
 /* ==========================================================================
@@ -277,29 +280,131 @@ footer {
 }
 
 /* ==========================================================================
-   UTILIDADES CSS
+   UTILIDADES CSS (Para evitar estilos en línea en el HTML)
    ========================================================================== */
-.mt-0-5 { margin-top: 0.5rem; }
-.mt-1 { margin-top: 1rem; }
-.mt-1-5 { margin-top: 1.5rem; }
-.mt-2 { margin-top: 2rem; }
-.mt-2-5 { margin-top: 2.5rem; }
-.ml-2 { margin-left: 2rem; }
-.text-sm { font-size: 0.85rem; }
-.text-md { font-size: 0.9rem; }
-.leading-loose { line-height: 1.8; }
-.text-primary { color: var(--primary-color) !important; }
-.text-muted { color: var(--text-muted) !important; }
-.text-center { text-align: center; }
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
-.hidden { display: none !important; }
+.mt-0-5 {
+    margin-top: 0.5rem;
+}
 
-.formula-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
+.mt-1 {
     margin-top: 1rem;
+}
+
+.mt-1-5 {
+    margin-top: 1.5rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-2-5 {
+    margin-top: 2.5rem;
+}
+
+.ml-2 {
+    margin-left: 2rem;
+}
+.text-sm {
+    font-size: 0.85rem;
+}
+
+.text-md {
+    font-size: 0.9rem;
+}
+
+.leading-loose {
+    line-height: 1.8;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-orange {
+    color: #ff9800 !important;
+}
+
+.text-red {
+    color: #f44336 !important;
+}
+
+.text-purple {
+    color: #9c27b0 !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.math-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 0.5rem 0;
+}
+
+.grid-cols-auto {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.input-math {
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(10, 10, 10, 0.8);
+    color: white;
+    width: 100%;
+    max-width: 350px;
+    font-family: monospace;
+}
+
+.input-math:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(100, 181, 246, 0.4);
+}
+
+.result-box {
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.promo-box {
+    text-align: center;
+    padding: 2rem;
 }
 
 /* ==========================================================================
@@ -318,7 +423,7 @@ footer {
 
 .btn-primary:hover {
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.4);
+    box-shadow: 0 4px 15px rgba(100, 181, 246, 0.4);
 }
 
 /* ==========================================================================
@@ -425,48 +530,11 @@ footer {
 
 .formula-box-small {
     background-color: #121212;
-    padding: 0.75rem 1rem;
-    border-radius: 6px;
-    margin: 0.8rem 0 0 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 0;
     width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
     border-left: 3px solid var(--primary-color);
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
-/* Control de desbordamiento en fórmulas matemáticas MathJax */
-mjx-container[jax="SVG"][display="true"] {
-    max-width: 100% !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    margin: 0.4rem 0 !important;
-    padding: 0.2rem 0 !important;
-}
-
-mjx-container[jax="SVG"][display="true"] > svg {
-    max-width: 100% !important;
-    height: auto !important;
-}
-
-.formula-box::-webkit-scrollbar,
-.formula-box-small::-webkit-scrollbar,
-mjx-container::-webkit-scrollbar {
-    height: 4px;
-}
-
-.formula-box::-webkit-scrollbar-thumb,
-.formula-box-small::-webkit-scrollbar-thumb,
-mjx-container::-webkit-scrollbar-thumb {
-    background: rgba(74, 222, 128, 0.4);
-    border-radius: 4px;
-}
-
-.formula-box::-webkit-scrollbar-track,
-.formula-box-small::-webkit-scrollbar-track,
-mjx-container::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
 }
 
 /* ==========================================================================
@@ -513,39 +581,6 @@ mjx-container::-webkit-scrollbar-track {
 }
 
 /* ==========================================================================
-   ANIMACIONES (Fade-in al hacer scroll)
-   ========================================================================== */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition:
-        opacity 0.8s ease-out,
-        transform 0.8s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ==========================================================================
-   BOTÓN DE MENÚ MÓVIL (Hamburguesa)
-   ========================================================================== */
-.mobile-menu-btn {
-    display: none; 
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-size: 1.8rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.mobile-menu-btn:hover {
-    transform: scale(1.1);
-}
-
-/* ==========================================================================
    QUIZ INTERACTIVO (EXAMEN)
    ========================================================================== */
 .quiz-box {
@@ -567,11 +602,11 @@ mjx-container::-webkit-scrollbar-track {
 
 .progress-bar {
     height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, var(--primary-color), #4ade80);
+    width: 0%; /* Se actualiza con JS */
+    background: linear-gradient(90deg, var(--primary-color), #42a5f5);
     border-radius: 4px;
     transition: width 0.4s ease-in-out;
-    box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+    box-shadow: 0 0 10px rgba(100, 181, 246, 0.5);
 }
 
 .options-grid {
@@ -597,7 +632,7 @@ mjx-container::-webkit-scrollbar-track {
 }
 
 .option-btn:hover:not(:disabled) {
-    background-color: rgba(74, 222, 128, 0.1);
+    background-color: rgba(100, 181, 246, 0.1);
     border-color: var(--primary-color);
     transform: translateX(5px);
 }
@@ -659,320 +694,90 @@ mjx-container::-webkit-scrollbar-track {
     font-size: 3rem;
     font-weight: 700;
     color: white;
-    box-shadow: 0 0 30px rgba(74, 222, 128, 0.5);
+    box-shadow: 0 0 30px rgba(100, 181, 246, 0.5);
     border: 4px solid var(--primary-color);
 }
 
 /* ==========================================================================
-   SIMULADOR INTERACTIVO DE RIEMANN
+   ANIMACIONES (Fade-in al hacer scroll)
    ========================================================================== */
-.sim-container {
-    background-color: rgba(20, 20, 20, 0.7);
-    border: 1px solid rgba(74, 222, 128, 0.2);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out;
 }
 
-.sim-canvas-wrapper {
-    width: 100%;
-    background-color: #0d1117;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    overflow: hidden;
-    position: relative;
-    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.6);
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.sim-canvas-wrapper canvas {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.sim-controls {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.2rem;
-    margin-top: 1.2rem;
-    align-items: center;
-}
-
-.sim-control-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.sim-control-group label {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-weight: 600;
-}
-
-.sim-select, .sim-slider {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-    border: 1px solid rgba(74, 222, 128, 0.3);
-    border-radius: 6px;
-    padding: 0.6rem 0.8rem;
-    font-family: var(--font-main);
-    font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.2s;
-}
-
-.sim-select:focus, .sim-slider:focus {
-    border-color: var(--primary-color);
-}
-
-.sim-slider {
-    cursor: pointer;
-    accent-color: var(--primary-color);
-    padding: 0;
-}
-
-.sim-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.2rem;
-    padding: 1rem;
-    background-color: rgba(74, 222, 128, 0.05);
-    border-radius: 8px;
-    border-left: 3px solid var(--primary-color);
-}
-
-.stat-item {
-    flex: 1;
-    min-width: 130px;
-}
-
-.stat-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    letter-spacing: 0.5px;
-}
-
-.stat-value {
-    font-size: 1.2rem;
-    font-weight: 700;
+/* ==========================================================================
+   BOTÓN DE MENÚ MÓVIL (Hamburguesa)
+   ========================================================================== */
+.mobile-menu-btn {
+    display: none; /* Oculto en PC por defecto */
+    background: none;
+    border: none;
     color: var(--primary-color);
-    margin-top: 0.2rem;
-}
-
-/* ==========================================================================
-   PASOS Y MÉTODOS DE INTEGRACIÓN (STEP CARDS)
-   ========================================================================== */
-.steps-timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 1.5rem 0;
-}
-
-.step-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.2rem;
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 8px;
-    padding: 1.2rem;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.step-card:hover {
-    transform: translateX(4px);
-    border-color: rgba(74, 222, 128, 0.4);
-}
-
-.step-badge {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-    border-radius: 50%;
-    background-color: var(--primary-light);
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-}
-
-.step-body {
-    flex: 1;
-    min-width: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.step-body h4 {
-    color: #ffffff;
-    font-size: 1.05rem;
-    margin-bottom: 0.3rem;
-}
-
-.step-body p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 0.4rem;
-}
-
-/* ==========================================================================
-   BADGES Y CHIPS
-   ========================================================================== */
-.badge {
-    display: inline-block;
-    padding: 0.25rem 0.6rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border-radius: 9999px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    vertical-align: middle;
-}
-
-.badge-primary {
-    background-color: rgba(74, 222, 128, 0.15);
-    color: var(--primary-color);
-    border: 1px solid rgba(74, 222, 128, 0.4);
-}
-
-.badge-blue {
-    background-color: rgba(56, 189, 248, 0.15);
-    color: #38bdf8;
-    border: 1px solid rgba(56, 189, 248, 0.4);
-}
-
-.badge-purple {
-    background-color: rgba(192, 132, 252, 0.15);
-    color: #c084fc;
-    border: 1px solid rgba(192, 132, 252, 0.4);
-}
-
-.badge-amber {
-    background-color: rgba(251, 191, 36, 0.15);
-    color: #fbbf24;
-    border: 1px solid rgba(251, 191, 36, 0.4);
-}
-
-/* ==========================================================================
-   CASES GRID (Para Sustitución Trigonométrica y Fracciones Parciales)
-   ========================================================================== */
-.cases-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1.2rem;
-    margin: 1.5rem 0;
-}
-
-.case-card {
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-top: 3px solid var(--primary-color);
-    border-radius: 8px;
-    padding: 1.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.case-card.blue { border-top-color: #38bdf8; }
-.case-card.purple { border-top-color: #c084fc; }
-.case-card.amber { border-top-color: #fbbf24; }
-
-.case-card h4 {
-    font-size: 1rem;
-    color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* ==========================================================================
-   ILATE MNEMOTECNIA BANNER
-   ========================================================================== */
-.ilate-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0.6rem;
-    margin: 1.2rem 0;
-}
-
-.ilate-item {
-    background: rgba(30, 30, 30, 0.9);
-    border: 1px solid rgba(74, 222, 128, 0.2);
-    border-radius: 8px;
-    padding: 0.8rem 0.4rem;
-    text-align: center;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.ilate-item:hover {
-    transform: translateY(-3px);
-    border-color: var(--primary-color);
-}
-
-.ilate-letter {
     font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--primary-color);
-    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.ilate-name {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-top: 0.4rem;
-}
-
-.ilate-example {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-top: 0.2rem;
-}
-
-@media screen and (max-width: 600px) {
-    .ilate-grid {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    }
+.mobile-menu-btn:hover {
+    transform: scale(1.1);
 }
 
 /* ==========================================================================
    MEDIA QUERIES (Diseño Responsivo Perfecto)
    ========================================================================== */
 @media screen and (max-width: 768px) {
-    .hero-section h1 { font-size: 2rem; }
-    .hero-section p { font-size: 1.05rem; }
-    .content-section h2 { font-size: 1.5rem; }
-    .container { padding: 0 1.2rem; }
-    .card { padding: 1.5rem; }
-    .formula-box { font-size: 1rem; padding: 1rem; }
-    .formula-box-small { font-size: 0.95rem; padding: 0.6rem 0.8rem; }
-    .step-card { padding: 1rem; gap: 0.8rem; }
+    /* Ajustes de tipografía para pantallas pequeñas */
+    .hero-section h1 {
+        font-size: 2rem;
+    }
     
-    .mobile-menu-btn { display: block; }
+    .hero-section p {
+        font-size: 1.05rem;
+    }
     
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Espaciados reducidos */
+    .container {
+        padding: 0 1.2rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .formula-box, .formula-box-small {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    /* Navegación Móvil */
+    .mobile-menu-btn {
+        display: block; /* Mostrar el botón de menú en móvil */
+    }
+
     .nav-menu {
         position: absolute;
-        top: 100%;
+        top: 100%; /* Justo debajo del navbar */
         left: 0;
         width: 100%;
-        background-color: rgba(20, 20, 20, 0.98);
+        background-color: rgba(20, 20, 20, 0.98); /* Fondo oscuro y opaco para tapar el contenido de abajo */
         -webkit-backdrop-filter: blur(15px);
         backdrop-filter: blur(15px);
         flex-direction: column;
         gap: 0;
-        max-height: 0;
+        max-height: 0; /* Oculto por defecto usando max-height animable */
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -980,22 +785,90 @@ mjx-container::-webkit-scrollbar-track {
     }
 
     .nav-menu.active {
-        max-height: 400px;
+        max-height: 400px; /* Altura suficiente para mostrar todos los enlaces y hacer la animación */
     }
 
-    .nav-menu li { width: 100%; text-align: center; }
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
     .nav-menu a {
         display: block;
-        padding: 1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 1.2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
     }
     
+    .nav-menu a::after {
+        display: none; /* Quitamos la rayita azul inferior porque ahora son botones en bloque completo */
+    }
+
+    .nav-menu a:hover {
+        background-color: rgba(100, 181, 246, 0.1); /* Efecto sutil al tocar un enlace en móvil */
+    }
+
+    /* Ajuste del Dropdown para Celulares */
     .dropdown-content {
         position: static;
-        width: 100%;
-        background-color: transparent;
+        display: none;
         box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.2);
         border: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        padding-left: 3rem; /* Indentación extra para notar que es submenú */
+        font-size: 0.9rem;
+    }
+    .dropdown-content a:hover {
+        padding-left: 3rem;
+    }
+}
+
+/* ==========================================================================
+   IMPRESIÓN (PRINT MEDIA QUERY)
+   ========================================================================== */
+.print-only {
+    display: none;
+}
+
+@media print {
+    body::before {
+        display: none !important;
+    }
+    body, .card {
+        background: white !important;
+        color: black !important;
+    }
+    h1, h2, h3, p, .text-primary, .text-muted {
+        color: black !important;
+    }
+    .print-hide {
+        display: none !important;
+    }
+    .print-only {
+        display: block !important;
+    }
+    .formula-box {
+        background: #f9f9f9 !important;
+        border: 1px solid #ccc !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        break-inside: avoid;
+    }
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
     }
 }
 
@@ -1006,6 +879,6 @@ mjx-container::-webkit-scrollbar-track {
 
 .nav-switch-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(100, 181, 246, 0.45);
-    background: rgba(100, 181, 246, 0.25) !important;
+    box-shadow: 0 4px 14px rgba(74, 222, 128, 0.45);
+    background: rgba(74, 222, 128, 0.25) !important;
 }

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Derivadas | Guía Educativa</title>
+    <link rel="icon" href="../img/favicon.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/styles.css"> 
+    
+    <!-- MathJax en modo SVG -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+    <!-- Barra de Navegación (Se ocultará al imprimir) -->
+    <nav class="navbar print-hide">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">📘 Derivadas</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">⬅️ Volver al Inicio</a></li>
+                <li><a href="trigonometria.html">📐 Trigonometría</a></li>
+                <li><a href="formulario.html" class="text-primary">📝 Formulario</a></li>
+                <li><a href="quiz.html" class="text-primary">🎓 Quiz</a></li>
+                <li><a href="../../index.html" class="nav-switch-btn" style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.35); padding: 0.35rem 0.85rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block;">📗 Integrales</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-section print-hide">
+        <div class="container">
+            <h1>Formulario Completo</h1>
+            <p>Tu "hoja de referencias" definitiva. Todas las reglas en un solo lugar.</p>
+            <button onclick="window.print()" class="btn-primary mt-2">
+                🖨️ Imprimir / Guardar PDF
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenedor del Formulario para Imprimir -->
+    <main class="container print-area">
+        
+        <div class="print-only text-center mb-2">
+            <h1>Formulario de Derivadas</h1>
+            <p>Guía Educativa de Cálculo Diferencial</p>
+            <hr>
+        </div>
+
+        <div class="flashcard-grid grid-cols-auto">
+            
+            <!-- Bloque 1 -->
+            <div class="card mb-1">
+                <h3 class="text-primary">1. Reglas Básicas</h3>
+                <hr class="divider">
+                <p><strong>Constante:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [c] = 0 \)</div>
+                <p><strong>Identidad:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [x] = 1 \)</div>
+                <p><strong>Potencia:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [x^n] = n x^{n-1} \)</div>
+            </div>
+
+            <!-- Bloque 2 -->
+            <div class="card mb-1">
+                <h3 class="text-orange">2. Operaciones</h3>
+                <hr class="divider">
+                <p><strong>Suma y Resta:</strong></p>
+                <div class="formula-box formula-box-small">\( [f(x) \pm g(x)]' = f'(x) \pm g'(x) \)</div>
+                <p><strong>Producto:</strong></p>
+                <div class="formula-box formula-box-small">\( [u \cdot v]' = u'v + uv' \)</div>
+                <p><strong>Cociente:</strong></p>
+                <div class="formula-box formula-box-small">\( \left[\frac{u}{v}\right]' = \frac{u'v - uv'}{v^2} \)</div>
+                <p><strong>Regla de la Cadena:</strong></p>
+                <div class="formula-box formula-box-small">\( [f(g(x))]' = f'(g(x)) \cdot g'(x) \)</div>
+            </div>
+
+            <!-- Bloque 3 -->
+            <div class="card mb-1">
+                <h3 class="text-red">3. Trascendentes</h3>
+                <hr class="divider">
+                <p><strong>Exponencial Natural:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [e^x] = e^x \)</div>
+                <p><strong>Logaritmo Natural:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [\ln(x)] = \frac{1}{x} \)</div>
+                <p><strong>Exponencial Base a:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [a^x] = a^x \ln(a) \)</div>
+                <p><strong>Logaritmo Base a:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [\log_a(x)] = \frac{1}{x \ln(a)} \)</div>
+            </div>
+
+            <!-- Bloque 4 -->
+            <div class="card mb-1">
+                <h3 class="text-purple">4. Trigonométricas</h3>
+                <hr class="divider">
+                <p><strong>Seno:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [\sin(x)] = \cos(x) \)</div>
+                <p><strong>Coseno:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [\cos(x)] = -\sin(x) \)</div>
+                <p><strong>Tangente:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [\tan(x)] = \sec^2(x) \)</div>
+                <p><strong>Cotangente:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [\cot(x)] = -\csc^2(x) \)</div>
+                <p><strong>Secante:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [\sec(x)] = \sec(x)\tan(x) \)</div>
+                <p><strong>Cosecante:</strong></p>
+                <div class="formula-box formula-box-small">\( \frac{d}{dx} [\csc(x)] = -\csc(x)\cot(x) \)</div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="print-hide">
+        <div class="container">
+            <p>Creado para propósitos educativos. 2026</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

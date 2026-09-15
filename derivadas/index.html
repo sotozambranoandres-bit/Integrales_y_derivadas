@@ -18,28 +18,28 @@
     <!-- Barra de Navegación -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#inicio" class="nav-logo">📘 Derivadas</a>
-            <!-- Botón de menú para celulares -->
+            <a href="#inicio" class="nav-logo">Cálculo Diferencial</a>
+            <!-- Botón de menú para móviles -->
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
-                ☰
+                Menú
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li class="dropdown">
-                    <a href="#inicio" style="cursor: pointer;">📚 Temas ▼</a>
+                    <a href="#inicio" style="cursor: pointer;">Temas <span class="nav-arrow">&#9662;</span></a>
                     <div class="dropdown-content">
                         <a href="#introduccion">1. Introducción</a>
                         <a href="#reglas-basicas">2. Reglas Básicas</a>
                         <a href="#operaciones">3. Operaciones</a>
                         <a href="#regla-cadena">4. Cadena</a>
                         <a href="#trascendentes">5. Trascendentes</a>
-                        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 0.4rem 0;">
-                        <a href="../index.html" style="color: #4ade80; font-weight: 600;">📗 Ver Cálculo Integral & EDO ➔</a>
+                        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 0.4rem 0;">
+                        <a href="../index.html" style="color: #4ade80; font-weight: 600;">Cálculo Integral & EDO &rarr;</a>
                     </div>
                 </li>
-                <li><a href="html/trigonometria.html">📐 Trigonometría</a></li>
-                <li><a href="html/formulario.html" class="text-primary">📝 Formulario</a></li>
-                <li><a href="html/quiz.html" class="text-primary">🎓 Quiz</a></li>
-                <li><a href="../index.html" class="nav-switch-btn" style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.35); padding: 0.35rem 0.85rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block;">📗 Integrales</a></li>
+                <li><a href="html/trigonometria.html">Trigonometría</a></li>
+                <li><a href="html/formulario.html" class="text-primary">Formulario</a></li>
+                <li><a href="html/quiz.html" class="text-primary">Quiz</a></li>
+                <li><a href="../index.html" class="nav-switch-btn" style="background: rgba(74, 222, 128, 0.12); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.35); padding: 0.35rem 0.85rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.88rem; display: inline-block;">Cálculo Integral</a></li>
             </ul>
         </div>
     </nav>
@@ -47,11 +47,11 @@
     <header id="inicio" class="hero-section">
         <div class="container">
             <div style="display: flex; justify-content: center; gap: 0.6rem; margin-bottom: 0.8rem; flex-wrap: wrap;">
-                <span class="badge" style="background: rgba(100, 181, 246, 0.15); color: #64b5f6; border: 1px solid rgba(100, 181, 246, 0.4);">📘 Módulo: Cálculo Diferencial (Derivadas)</span>
-                <a href="../index.html" class="badge" style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.4); text-decoration: none;">📗 Ir a Cálculo Integral & EDO ➔</a>
+                <span class="badge" style="background: rgba(100, 181, 246, 0.15); color: #64b5f6; border: 1px solid rgba(100, 181, 246, 0.4);">Cálculo Diferencial (Derivadas)</span>
+                <a href="../index.html" class="badge" style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.4); text-decoration: none;">Ir a Cálculo Integral & EDO &rarr;</a>
             </div>
             <h1>Propiedades de las Derivadas</h1>
-            <p>Una guía clara y profesional para entender las reglas fundamentales del cálculo diferencial.</p>
+            <p>Guía académica estructurada sobre las reglas fundamentales del cálculo diferencial.</p>
         </div>
     </header>
     <!-- Contenido Principal -->
@@ -80,74 +80,52 @@
         <!-- Sección: Reglas Básicas -->
         <section id="reglas-basicas" class="content-section fade-in">
             <h2>2. Reglas Básicas</h2>
-            <div class="flashcard-grid">
+            <div class="ref-formula-grid">
                 <!-- Tarjeta 1 -->
-                <div class="flashcard-container">
-                    <div class="flashcard">
-                        <div class="flashcard-front">
-                            <h3>Derivada de una Constante</h3>
-                            <div class="icon">🔢</div>
-                        </div>
-                        <div class="flashcard-back">
-                            <div class="card-section">
-                                <h4>Fórmula:</h4>
-                                <div class="formula-box-small">
-                                    \[ \frac{d}{dx} [c] = 0 \]
-                                </div>
-                            </div>
-                            <div class="card-section example-section">
-                                <h4>Ejemplo:</h4>
-                                <p class="math-step">\( f(x) = 8 \)</p>
-                                <p class="math-step text-muted text-sm">(No hay variable x que cambie)</p>
-                                <p class="math-step result">\( f'(x) = 0 \)</p>
-                            </div>
-                        </div>
+                <div class="ref-formula-card">
+                    <div class="ref-card-header">
+                        <h3>Derivada de una Constante</h3>
+                        <span class="tag-pill tag-sky">Fundamental</span>
+                    </div>
+                    <div class="ref-card-formula">
+                        \[ \frac{d}{dx} [c] = 0 \]
+                    </div>
+                    <div class="ref-card-example">
+                        <div class="ex-label">Ejemplo práctico</div>
+                        <p class="math-step">\( f(x) = 8 \implies f'(x) = 0 \)</p>
+                        <p class="math-step text-muted text-sm mt-1">Una constante no tiene tasa de cambio respecto a la variable independiente.</p>
                     </div>
                 </div>
+
                 <!-- Tarjeta 2 -->
-                <div class="flashcard-container">
-                    <div class="flashcard">
-                        <div class="flashcard-front">
-                            <h3>Regla de la Potencia</h3>
-                            <div class="icon">📈</div>
-                        </div>
-                        <div class="flashcard-back">
-                            <div class="card-section">
-                                <h4>Fórmula:</h4>
-                                <div class="formula-box-small">
-                                    \[ \frac{d}{dx} [x^n] = n \cdot x^{n-1} \]
-                                </div>
-                            </div>
-                            <div class="card-section example-section">
-                                <h4>Ejemplo:</h4>
-                                <p class="math-step">\( f(x) = x^5 \)</p>
-                                <p class="math-step text-muted text-sm">(Bajamos el 5 a multiplicar y al 5 le restamos 1)</p>
-                                <p class="math-step result">\( f'(x) = 5x^4 \)</p>
-                            </div>
-                        </div>
+                <div class="ref-formula-card">
+                    <div class="ref-card-header">
+                        <h3>Regla de la Potencia</h3>
+                        <span class="tag-pill tag-purple">Álgebra</span>
+                    </div>
+                    <div class="ref-card-formula">
+                        \[ \frac{d}{dx} [x^n] = n \cdot x^{n-1} \]
+                    </div>
+                    <div class="ref-card-example">
+                        <div class="ex-label">Ejemplo práctico</div>
+                        <p class="math-step">\( f(x) = x^5 \implies f'(x) = 5x^{5-1} = 5x^4 \)</p>
+                        <p class="math-step text-muted text-sm mt-1">El exponente desciende como coeficiente multiplicador y se reduce en una unidad.</p>
                     </div>
                 </div>
+
                 <!-- Tarjeta 3 -->
-                <div class="flashcard-container">
-                    <div class="flashcard">
-                        <div class="flashcard-front">
-                            <h3>Múltiplo Constante</h3>
-                            <div class="icon">✖️</div>
-                        </div>
-                        <div class="flashcard-back">
-                            <div class="card-section">
-                                <h4>Fórmula:</h4>
-                                <div class="formula-box-small">
-                                    \[ \frac{d}{dx} [c \cdot f(x)] = c \cdot f'(x) \]
-                                </div>
-                            </div>
-                            <div class="card-section example-section">
-                                <h4>Ejemplo:</h4>
-                                <p class="math-step">\( f(x) = 3x^4 \)</p>
-                                <p class="math-step text-muted text-sm">(Dejamos el 3, y derivamos \( x^4 \): \( 4x^3 \))</p>
-                                <p class="math-step result">\( f'(x) = 3 \cdot (4x^3) = 12x^3 \)</p>
-                            </div>
-                        </div>
+                <div class="ref-formula-card">
+                    <div class="ref-card-header">
+                        <h3>Múltiplo Constante</h3>
+                        <span class="tag-pill tag-amber">Linealidad</span>
+                    </div>
+                    <div class="ref-card-formula">
+                        \[ \frac{d}{dx} [c \cdot f(x)] = c \cdot f'(x) \]
+                    </div>
+                    <div class="ref-card-example">
+                        <div class="ex-label">Ejemplo práctico</div>
+                        <p class="math-step">\( f(x) = 3x^4 \implies f'(x) = 3 \cdot (4x^3) = 12x^3 \)</p>
+                        <p class="math-step text-muted text-sm mt-1">El factor constante escalar se preserva inalterado durante la diferenciación.</p>
                     </div>
                 </div>
             </div>
@@ -247,7 +225,7 @@
                     <h4>¿Quieres dominar las 6 derivadas trigonométricas?</h4>
                     <p class="mt-0-5 text-muted text-md">Hemos creado una sección especial, con ejemplos avanzados, dedicada exclusivamente a este tema cíclico.</p>
                     <a href="html/trigonometria.html" class="btn-primary mt-1">
-                        Ir a la Guía de Trigonometría ➡️
+                        Ir a la Guía de Trigonometría &rarr;
                     </a>
                 </div>
             </div>
@@ -259,10 +237,10 @@
                 <p>A continuación, pondremos a prueba todo lo aprendido. Hemos diseñado estos ejercicios ordenados por nivel de dificultad para que puedas avanzar a tu propio ritmo. ¡Intenta resolverlos antes de revelar la solución!</p>
 
                 <!-- Nivel 1 -->
-                <h3 class="mt-2-5">🟢 Nivel Básico: Polinomios</h3>
+                <h3 class="mt-2-5">Nivel 1: Polinomios</h3>
                 <p>Derivar la función: \( f(x) = 3x^4 - 5x^2 + 2x - 7 \)</p>
                 
-                <button class="btn-toggle" onclick="toggleSolution('solucion1')">👁️ Mostrar Solución</button>
+                <button class="btn-toggle" onclick="toggleSolution('solucion1')">Ver solución detallada ▾</button>
                 <div id="solucion1" class="solution-container">
                     <p class="mt-1"><strong>Solución paso a paso:</strong></p>
                     <ol class="ml-2 mt-0-5 leading-loose">
@@ -278,10 +256,10 @@
                     </div>
                 </div>
                 <!-- Nivel 2 -->
-                <h3 class="mt-2-5">🟠 Nivel Intermedio: Regla del Cociente</h3>
+                <h3 class="mt-2-5">Nivel 2: Regla del Cociente</h3>
                 <p>Derivar la función: \( f(x) = \frac{x^2}{x + 1} \)</p>
                 
-                <button class="btn-toggle" onclick="toggleSolution('solucion2')">👁️ Mostrar Solución</button>
+                <button class="btn-toggle" onclick="toggleSolution('solucion2')">Ver solución detallada ▾</button>
                 <div id="solucion2" class="solution-container">
                     <p class="mt-1"><strong>Solución:</strong> Aplicamos la fórmula del cociente donde el numerador es \( x^2 \) y el denominador es \( x + 1 \).</p>
                     <div class="formula-box">
@@ -293,9 +271,9 @@
                     </div>
                 </div>
                 <!-- Nivel 3 -->
-                <h3 class="mt-2-5">🔴 Nivel Avanzado: Producto con Trascendentes</h3>
+                <h3 class="mt-2-5">Nivel 3: Producto con Trascendentes</h3>
                 <p>Derivar la función: \( f(x) = e^{2x} \cdot \cos(x) \)</p>
-                <button class="btn-toggle" onclick="toggleSolution('solucion3')">👁️ Mostrar Solución</button>
+                <button class="btn-toggle" onclick="toggleSolution('solucion3')">Ver solución detallada ▾</button>
                 <div id="solucion3" class="solution-container">
                     <p class="mt-1"><strong>Solución:</strong> Aplicamos la Regla del Producto y la Regla de la Cadena para el exponente \(2x\).</p>
                     <ul class="ml-2 mt-0-5 leading-loose">
@@ -310,9 +288,9 @@
                     </div>
                 </div>
                 <!-- Nivel 4 -->
-                <h3 class="mt-2-5">🟣 Nivel Experto: Cadena Anidada</h3>
+                <h3 class="mt-2-5">Nivel 4: Regla de la Cadena Anidada</h3>
                 <p>Derivar la función: \( f(x) = \ln(\sin(3x)) \)</p>
-                <button class="btn-toggle" onclick="toggleSolution('solucion4')">👁️ Mostrar Solución</button>
+                <button class="btn-toggle" onclick="toggleSolution('solucion4')">Ver solución detallada ▾</button>
                 <div id="solucion4" class="solution-container">
                     <p class="mt-1"><strong>Solución:</strong> Tenemos tres funciones anidadas (logaritmo, seno, polinomio). Aplicamos la regla de la cadena dos veces desde afuera hacia adentro.</p>
                     <ol class="ml-2 mt-0-5 leading-loose">

@@ -1,8 +1,4 @@
-# derivadas
-
-esta es una pagina donde aprenderas a derivar funciones aprendiendo todas las reglas de las derivadas con muchos ejemplos y explicaciones paso a paso.
-
-# 📘 Reglas de las Derivadas
+# Reglas de las Derivadas
 
 Este proyecto consiste en una página web informativa que presenta de manera clara y estructurada las **reglas fundamentales de las derivadas**, orientada a estudiantes que están iniciando en el cálculo diferencial.
 
@@ -10,7 +6,7 @@ El diseño de la página mantiene una **estética formal y legible**, facilitand
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 Brindar una herramienta digital que permita a los usuarios:
 
@@ -20,19 +16,19 @@ Brindar una herramienta digital que permita a los usuarios:
 
 ---
 
-## 🧠 Contenido
+## Contenido
 
 La página incluye:
 
-- 📌 Regla de la suma
-- 📌 Regla del producto
-- 📌 Regla del cociente
-- 📌 Regla de la cadena
-- 📌 Ejemplos explicativos
+- Regla de la suma
+- Regla del producto
+- Regla del cociente
+- Regla de la cadena
+- Ejemplos explicativos
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - HTML5
 - CSS3
@@ -40,7 +36,7 @@ La página incluye:
 
 ---
 
-## 🎨 Diseño
+## Diseño
 
 El sitio presenta:
 
@@ -51,7 +47,7 @@ El sitio presenta:
 
 ---
 
-## 📂 Estructura del proyecto
+## Estructura del proyecto
 
 - `html`: Estructura principal y contenido de la página.
 - `css`: Estilos CSS para el diseño y formato.
@@ -61,19 +57,19 @@ El sitio presenta:
 
 ---
 
-## autores 👤
+## Autores
 
--Andres Soto
--Erickson Sojo
--Jose Perea
--Ahsley Ruiz
--Nicolas Cerón
--Ximena Obando
--Jhonathan Romero
--Daniel Pinto
--Brayan Figueroa
--Santiago Piedrahita
+- Andres Soto
+- Erickson Sojo
+- Jose Perea
+- Ahsley Ruiz
+- Nicolas Cerón
+- Ximena Obando
+- Jhonathan Romero
+- Daniel Pinto
+- Brayan Figueroa
+- Santiago Piedrahita
 
-## notas 📝
+## Notas
 
-- Este proyecto fue desarrollado por los estudiantes del ciclo 1-2026 segundo semestre de la institucion universitaria del putumayo sede Mocoa con fines educativos como parte del proceso de formación académica.
+- Este proyecto fue desarrollado por los estudiantes del ciclo 1-2026 segundo semestre de la institución universitaria del Putumayo sede Mocoa con fines educativos como parte del proceso de formación académica.

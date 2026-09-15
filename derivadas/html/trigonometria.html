@@ -20,21 +20,21 @@
     <!-- Barra de Navegación -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="nav-logo">📘 Derivadas</a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">☰</button>
+            <a href="../index.html" class="nav-logo"><span class="logo-symbol" style="color: #64b5f6; font-family: 'Times New Roman', serif; font-size: 1.3rem; margin-right: 0.35rem; font-style: italic;">d/dx</span>Derivadas</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">Menú</button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="../index.html">⬅️ Volver al Inicio</a></li>
+                <li><a href="../index.html">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="#" style="cursor: pointer;">📚 Temas Trigo ▼</a>
+                    <a href="#" style="cursor: pointer;">Temas Trigo ▾</a>
                     <div class="dropdown-content">
                         <a href="#seno-coseno">1. Seno y Coseno</a>
                         <a href="#tangente-cotangente">2. Tangente / Cotangente</a>
                         <a href="#secante-cosecante">3. Secante / Cosecante</a>
                     </div>
                 </li>
-                <li><a href="formulario.html">📝 Formulario</a></li>
-                <li><a href="quiz.html" class="text-primary">🎓 Quiz</a></li>
-                <li><a href="../../index.html" class="nav-switch-btn" style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.35); padding: 0.35rem 0.85rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block;">📗 Integrales</a></li>
+                <li><a href="formulario.html">Formulario</a></li>
+                <li><a href="quiz.html" class="text-primary">Evaluación</a></li>
+                <li><a href="../../index.html" class="nav-switch-btn" style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.35); padding: 0.35rem 0.85rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block;">Cálculo Integral</a></li>
             </ul>
         </div>
     </nav>
@@ -42,7 +42,7 @@
     <header id="inicio" class="hero-section">
         <div class="container">
             <h1>Derivadas Trigonométricas</h1>
-            <p>El estudio profundo de las funciones cíclicas y sus razones de cambio.</p>
+            <p>El estudio analítico de funciones cíclicas, identidades periódicas y razones de cambio.</p>
         </div>
     </header>
 
@@ -51,7 +51,7 @@
         <section class="content-section fade-in">
             <h2>El Mundo Cíclico de la Trigonometría</h2>
             <div class="card">
-                <p>A diferencia de los polinomios algebraicos, las funciones trigonométricas son periódicas, es decir, sus valores se repiten en ciclos continuos. Las derivadas de estas funciones también comparten esta hermosa simetría y son la base para entender fenómenos como ondas, oscilaciones y movimiento pendular.</p>
+                <p>A diferencia de los polinomios algebraicos, las funciones trigonométricas son periódicas, es decir, sus valores se repiten en ciclos continuos. Las derivadas de estas funciones también comparten esta simetría y constituyen el pilar para modelar ondas, oscilaciones y movimiento armónico.</p>
                 <p class="mt-1">Aquí exploraremos las <strong>6 derivadas trigonométricas fundamentales</strong>.</p>
             </div>
         </section>
@@ -60,16 +60,16 @@
         <section id="seno-coseno" class="content-section fade-in">
             <h2>1. Seno y Coseno</h2>
             <div class="card">
-                <p>Son las funciones madre de la trigonometría. Notarás que una se convierte en la otra, con un pequeño cambio de signo en la derivada del coseno.</p>
+                <p>Son las funciones elementales de la trigonometría. Notarás que una se transforma en la otra, con un cambio de signo en la derivada del coseno.</p>
                 <div class="formula-box">
                     \[ \frac{d}{dx} [\sin(x)] = \cos(x) \quad \text{y} \quad \frac{d}{dx} [\cos(x)] = -\sin(x) \]
                 </div>
                 
                 <h3 class="mt-2">Ejemplo Práctico</h3>
                 <p>Derivar: \( f(x) = 5\sin(x) - 3\cos(x) \)</p>
-                <button class="btn-toggle" onclick="toggleSolution('sol-trig1')">👁️ Mostrar Solución</button>
+                <button class="btn-toggle" onclick="toggleSolution('sol-trig1')">Ver solución detallada ▾</button>
                 <div id="sol-trig1" class="solution-container">
-                    <p class="mt-1"><strong>Solución:</strong> Derivamos término por término manteniendo las constantes.</p>
+                    <p class="mt-1"><strong>Solución:</strong> Derivamos término a término manteniendo las constantes.</p>
                     <div class="formula-box">
                         \begin{align*}
                         f'(x) &= 5(\cos(x)) - 3(-\sin(x)) \\
@@ -84,14 +84,14 @@
         <section id="tangente-cotangente" class="content-section fade-in">
             <h2>2. Tangente y Cotangente</h2>
             <div class="card">
-                <p>Estas funciones están estrictamente relacionadas con las identidades pitagóricas, por lo que sus derivadas involucran funciones elevadas al cuadrado.</p>
+                <p>Estas funciones se derivan mediante el cociente de senos y cosenos, dando lugar a expresiones con potencias al cuadrado.</p>
                 <div class="formula-box">
                     \[ \frac{d}{dx} [\tan(x)] = \sec^2(x) \quad \text{y} \quad \frac{d}{dx} [\cot(x)] = -\csc^2(x) \]
                 </div>
 
                 <h3 class="mt-2">Ejemplo Práctico (Con Regla de la Cadena)</h3>
                 <p>Derivar: \( f(x) = \tan(4x^2) \)</p>
-                <button class="btn-toggle" onclick="toggleSolution('sol-trig2')">👁️ Mostrar Solución</button>
+                <button class="btn-toggle" onclick="toggleSolution('sol-trig2')">Ver solución detallada ▾</button>
                 <div id="sol-trig2" class="solution-container">
                     <p class="mt-1"><strong>Solución:</strong> Aplicamos la regla de la cadena: derivamos la tangente y luego multiplicamos por la derivada del ángulo interno (\(8x\)).</p>
                     <div class="formula-box">
@@ -108,14 +108,14 @@
         <section id="secante-cosecante" class="content-section fade-in">
             <h2>3. Secante y Cosecante</h2>
             <div class="card">
-                <p>Las derivadas de la secante y cosecante son únicas porque la función original "reaparece" en la respuesta, multiplicada por la tangente o cotangente respectiva.</p>
+                <p>Las derivadas de la secante y cosecante tienen la particularidad de conservar la función original multiplicada por su respectiva razón trigonométrica complementaria.</p>
                 <div class="formula-box">
                     \[ \frac{d}{dx} [\sec(x)] = \sec(x)\tan(x) \quad \text{y} \quad \frac{d}{dx} [\csc(x)] = -\csc(x)\cot(x) \]
                 </div>
 
                 <h3 class="mt-2">Ejemplo Avanzado (Con Regla del Producto)</h3>
                 <p>Derivar: \( f(x) = x^3\sec(x) \)</p>
-                <button class="btn-toggle" onclick="toggleSolution('sol-trig3')">👁️ Mostrar Solución</button>
+                <button class="btn-toggle" onclick="toggleSolution('sol-trig3')">Ver solución detallada ▾</button>
                 <div id="sol-trig3" class="solution-container">
                     <p class="mt-1"><strong>Solución:</strong> Aplicamos la Regla del Producto \( (uv)' = u'v + uv' \).</p>
                     <div class="formula-box">

@@ -36,10 +36,10 @@ function toggleSolution(id) {
 
     if (container.classList.contains('show')) {
         container.classList.remove('show');
-        button.innerHTML = '👁️ Mostrar Solución';
+        button.innerHTML = 'Ver solución detallada ▾';
     } else {
         container.classList.add('show');
-        button.innerHTML = '🙈 Ocultar Solución';
+        button.innerHTML = 'Ocultar solución ▴';
     }
 }
 
@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             
-            // Cambiar icono entre hamburguesa y X
+            // Cambiar texto entre Menú y Cerrar
             if (navMenu.classList.contains('active')) {
-                mobileMenuBtn.innerHTML = '✕'; // Icono de cerrar
+                mobileMenuBtn.innerHTML = 'Cerrar';
             } else {
-                mobileMenuBtn.innerHTML = '☰'; // Icono de hamburguesa
+                mobileMenuBtn.innerHTML = 'Menú';
             }
         });
 
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
-                mobileMenuBtn.innerHTML = '☰';
+                mobileMenuBtn.innerHTML = 'Menú';
             });
         });
     }
@@ -244,11 +244,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Mensaje Personalizado
         if (score === quizData.length) {
-            resultMessage.innerHTML = "¡Eres un maestro de las derivadas! 🏆<br>Puntaje Perfecto.";
+            resultMessage.innerHTML = "Puntaje excelente: " + score + " de " + quizData.length + ".<br>Demuestras un dominio integral de las reglas de derivación.";
         } else if (score >= 7) {
-            resultMessage.innerHTML = "¡Muy buen trabajo! Tienes bases sólidas. 👍";
+            resultMessage.innerHTML = "Buen trabajo: " + score + " de " + quizData.length + ". Bases sólidas en cálculo diferencial.";
         } else {
-            resultMessage.innerHTML = "Sigue practicando, repasa el <a href='formulario.html' class='text-primary'>Formulario</a> y vuelve a intentarlo. 📚";
+            resultMessage.innerHTML = "Resultado: " + score + " de " + quizData.length + ".<br>Se sugiere repasar el <a href='formulario.html' class='text-primary'>Formulario</a> y repetir la evaluación.";
         }
     }
 

@@ -882,3 +882,101 @@ footer {
     box-shadow: 0 4px 14px rgba(74, 222, 128, 0.45);
     background: rgba(74, 222, 128, 0.25) !important;
 }
+
+/* ==========================================================================
+   TARJETAS DE REFERENCIA FORMALES (Sin animaciones de IA / Sin Emojis)
+   ========================================================================== */
+.ref-formula-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.ref-formula-card {
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ref-formula-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(100, 181, 246, 0.4);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.ref-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ref-card-header h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+.ref-card-formula {
+    background: rgba(0, 0, 0, 0.35);
+    border-left: 3px solid var(--primary-color);
+    padding: 0.85rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.ref-card-example {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 0.85rem;
+    font-size: 0.92rem;
+}
+
+.ref-card-example .ex-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.tag-pill {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.tag-sky {
+    background: rgba(56, 189, 248, 0.12);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.tag-purple {
+    background: rgba(168, 85, 247, 0.12);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.tag-amber {
+    background: rgba(251, 191, 36, 0.12);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+}

@@ -30,10 +30,10 @@ function toggleSolution(id) {
 
     if (container.classList.contains('show')) {
         container.classList.remove('show');
-        if (button) button.innerHTML = '👁️ Mostrar Solución';
+        if (button) button.innerHTML = 'Ver solución detallada ▾';
     } else {
         container.classList.add('show');
-        if (button) button.innerHTML = '🙈 Ocultar Solución';
+        if (button) button.innerHTML = 'Ocultar solución ▴';
         // Si hay fórmulas matemáticas en la solución, asegurar renderizado de MathJax
         if (window.MathJax && MathJax.typesetPromise) {
             MathJax.typesetPromise([container]).catch(err => console.log(err));
@@ -41,7 +41,7 @@ function toggleSolution(id) {
     }
 }
 
-// 3. Menú Móvil Responsive (Hamburguesa)
+// 3. Menú Móvil Responsive
 document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navMenu = document.getElementById('navMenu');
@@ -49,14 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMenuBtn && navMenu) {
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 'Cerrar' : 'Menú';
         });
 
         const navLinks = navMenu.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
-                mobileMenuBtn.innerHTML = '☰';
+                mobileMenuBtn.innerHTML = 'Menú';
             });
         });
     }
@@ -482,11 +482,11 @@ document.addEventListener('DOMContentLoaded', () => {
         finalScoreDisplay.textContent = `${score}/${quizData.length}`;
 
         if (score === quizData.length) {
-            resultMessage.innerHTML = "¡Puntaje Perfecto! 🏆<br>Dominas todos los conceptos de cálculo integral y ecuaciones diferenciales.";
+            resultMessage.innerHTML = "Puntaje excelente: " + score + " de " + quizData.length + ".<br>Demuestras un dominio integral de los métodos analíticos y ecuaciones diferenciales evaluados.";
         } else if (score >= 5) {
-            resultMessage.innerHTML = "¡Muy buen rendimiento! 👍<br>Tienes bases muy sólidas en los métodos del curso.";
+            resultMessage.innerHTML = "Buen rendimiento: " + score + " de " + quizData.length + ".<br>Cuentas con bases sólidas en los procedimientos de integración del curso.";
         } else {
-            resultMessage.innerHTML = "Sigue practicando 📚<br>Repasa los métodos de sustitución, partes, fracciones parciales y EDOs en la guía y vuelve a intentarlo.";
+            resultMessage.innerHTML = "Resultado: " + score + " de " + quizData.length + ".<br>Se sugiere repasar los métodos analíticos (sustitución, partes, fracciones parciales y EDOs) y repetir la evaluación.";
         }
     }
 

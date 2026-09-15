@@ -20,36 +20,36 @@
     <!-- Barra de Navegación -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="nav-logo">📗 Cálculo Integral</a>
-            <!-- Botón de menú para celulares -->
+            <a href="../index.html" class="nav-logo"><span class="logo-symbol">&int;</span> Cálculo Integral</a>
+            <!-- Botón de menú para móviles -->
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
-                ☰
+                Menú
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li class="dropdown">
-                    <a href="../index.html#inicio" style="cursor: pointer;">📚 Temas del Curso ▼</a>
-                    <div class="dropdown-content" style="min-width: 290px;">
-                        <span style="display: block; padding: 6px 18px; font-size: 0.75rem; color: #4ade80; font-weight: 700; text-transform: uppercase;">🟢 Lo más fácil de aprender:</span>
-                        <a href="../index.html#que-es-integral">1. ¿Qué es una Integral? (Concepto Básico)</a>
-                        <a href="../index.html#integrales-directas">2. Integrales Directas (Reglas Inmediatas)</a>
+                    <a href="../index.html#inicio" style="cursor: pointer;">Temas del Curso <span class="nav-arrow">&#9662;</span></a>
+                    <div class="dropdown-content" style="min-width: 300px;">
+                        <span style="display: block; padding: 6px 18px; font-size: 0.72rem; color: #4ade80; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Nivel Inicial · Fundamentos</span>
+                        <a href="../index.html#que-es-integral">1. Concepto de Integral y Antiderivada</a>
+                        <a href="../index.html#integrales-directas">2. Integrales Directas e Inmediatas</a>
                         <a href="../index.html#propiedades-linealidad">3. Propiedades de Linealidad (Polinomios)</a>
-                        <span style="display: block; padding: 6px 18px; font-size: 0.75rem; color: #38bdf8; font-weight: 700; text-transform: uppercase; margin-top: 0.3rem;">🟡 Nivel Intermedio & Geometría:</span>
+                        <span style="display: block; padding: 6px 18px; font-size: 0.72rem; color: #38bdf8; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.3rem;">Nivel Intermedio · Métodos y Geometría</span>
                         <a href="../index.html#sustitucion">4. Sustitución y Cambio de Variable</a>
                         <a href="../index.html#integral-definida-area">5. Integral Definida y Área bajo la Curva</a>
                         <a href="../index.html#riemann">6. Sumatorias de Riemann (Simulador)</a>
-                        <span style="display: block; padding: 6px 18px; font-size: 0.75rem; color: #c084fc; font-weight: 700; text-transform: uppercase; margin-top: 0.3rem;">🔴 Métodos Avanzados & EDO:</span>
+                        <span style="display: block; padding: 6px 18px; font-size: 0.72rem; color: #c084fc; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.3rem;">Nivel Avanzado · Técnicas y EDO</span>
                         <a href="../index.html#por-partes">7. Integración por Partes (ILATE)</a>
                         <a href="../index.html#sust-trigonometrica">8. Sustitución Trigonométrica</a>
                         <a href="../index.html#fracciones-parciales">9. Fracciones Parciales</a>
                         <a href="../index.html#edo-separables">10. EDO Variables Separables</a>
                         <a href="../index.html#ejercicios-taller">11. Taller de Ejercicios Prácticos</a>
-                        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 0.4rem 0;">
-                        <a href="../derivadas/index.html" style="color: #64b5f6; font-weight: 600;">📘 Ver Cálculo Diferencial (Derivadas) ➔</a>
+                        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 0.4rem 0;">
+                        <a href="../derivadas/index.html" style="color: #64b5f6; font-weight: 600;">Cálculo Diferencial (Derivadas) &rarr;</a>
                     </div>
                 </li>
-                <li><a href="formulario.html" class="text-primary">📝 Formulario</a></li>
-                <li><a href="quiz.html" class="text-primary">🎓 Quiz Interactivo</a></li>
-                <li><a href="../derivadas/html/formulario.html" class="nav-switch-btn" style="background: rgba(100, 181, 246, 0.15); color: #64b5f6; border: 1px solid rgba(100, 181, 246, 0.35); padding: 0.35rem 0.85rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block;">📘 Formulario Derivadas</a></li>
+                <li><a href="formulario.html" class="text-primary">Formulario</a></li>
+                <li><a href="quiz.html" class="text-primary">Quiz</a></li>
+                <li><a href="../derivadas/html/formulario.html" class="nav-switch-btn" style="background: rgba(100, 181, 246, 0.12); color: #64b5f6; border: 1px solid rgba(100, 181, 246, 0.35); padding: 0.35rem 0.85rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.88rem; display: inline-block;">Formulario Derivadas</a></li>
             </ul>
         </div>
     </nav>
@@ -57,9 +57,9 @@
     <!-- Encabezado Secundario -->
     <header class="hero-section" style="padding-bottom: 1.5rem;">
         <div class="container">
-            <span class="badge badge-primary" style="margin-bottom: 0.8rem;">Cheat Sheet Oficial</span>
+            <span class="tag-pill tag-pill-emerald" style="margin-bottom: 0.6rem;">Compendio de Fórmulas y Métodos</span>
             <h1>Formulario de Cálculo Integral y EDO</h1>
-            <p>Compendio completo de fórmulas, tablas de métodos analíticos y modelos de resolución rápida para estudiantes universitarios.</p>
+            <p>Compendio sintético de reglas de integración inmediata, propiedades de la integral definida, métodos analíticos y modelos de ecuaciones diferenciales separables.</p>
         </div>
     </header>
 
@@ -210,8 +210,8 @@
             </div>
             
             <div class="text-center mt-2" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <a href="../index.html" class="btn-primary">⬅️ Volver a la Guía de Temas</a>
-                <a href="quiz.html" class="btn-toggle" style="margin-top: 0; padding: 0.8rem 1.5rem;">🎓 Poner a Prueba en el Quiz</a>
+                <a href="../index.html" class="btn-primary">Volver a la Guía Principal &rarr;</a>
+                <a href="quiz.html" class="btn-toggle" style="margin-top: 0; padding: 0.8rem 1.5rem;">Ir a la Autoevaluación (Quiz) &rarr;</a>
             </div>
         </section>
 
@@ -220,7 +220,7 @@
     <!-- Pie de página -->
     <footer>
         <div class="container">
-            <p>Guía Educativa de Cálculo Integral y EDO • Formulario 2026</p>
+            <p>Portal Académico de Cálculo Integral y Ecuaciones Diferenciales &bull; Formulario 2026</p>
         </div>
     </footer>
 

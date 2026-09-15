@@ -1,10 +1,10 @@
-# 📚 Portal Educativo Universitario: Cálculo Diferencial & Cálculo Integral
+# Portal Educativo Universitario: Cálculo Diferencial y Cálculo Integral
 
-Una plataforma web interactiva y completa diseñada para estudiantes universitarios, que abarca los fundamentos teóricos, métodos analíticos paso a paso, hojas de fórmulas (cheat sheets) imprimibles, simuladores interactivos en tiempo real y quices de autoevaluación.
+Una plataforma web interactiva y completa diseñada para estudiantes universitarios, que abarca los fundamentos teóricos, métodos analíticos paso a paso, hojas de fórmulas imprimibles, simuladores interactivos en tiempo real y evaluaciones formativas de autoevaluación.
 
 ---
 
-## 🧭 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 ├── index.html                   # Portal Principal: Cálculo Integral & EDO Variables Separables
@@ -32,7 +32,7 @@ Una plataforma web interactiva y completa diseñada para estudiantes universitar
 
 ---
 
-## 📗 Módulo 1: Cálculo Integral y EDO
+## Módulo 1: Cálculo Integral y EDO
 - **Definición de la Integral:** Antiderivada general, constante \(C\), integral definida y Teorema Fundamental del Cálculo (Partes 1 y 2 / Regla de Barrow).
 - **Sumatorias de Riemann:** Simulador interactivo en HTML5 Canvas (extremo izquierdo, derecho y punto medio con cálculo de error en tiempo real).
 - **Área Bajo la Curva:** Regiones sobre el eje \(x\), valor absoluto y área acotada entre dos curvas.
@@ -48,7 +48,7 @@ Una plataforma web interactiva y completa diseñada para estudiantes universitar
 
 ---
 
-## 📘 Módulo 2: Cálculo Diferencial (Derivadas)
+## Módulo 2: Cálculo Diferencial (Derivadas)
 - **Definición Formal:** Concepto de límite de Fermat/Leibniz e interpretación geométrica como pendiente de la recta tangente.
 - **Reglas Básicas:** Derivada de una constante, regla de la potencia y múltiplos escalares.
 - **Operaciones de Derivación:** Regla de la suma/resta, regla del producto y regla del cociente.
@@ -58,7 +58,7 @@ Una plataforma web interactiva y completa diseñada para estudiantes universitar
 
 ---
 
-## 🚀 Cómo Ejecutar Localmente
+## Cómo Ejecutar Localmente
 Simplemente abre `index.html` en tu navegador web o inicia un servidor local:
 ```bash
 # Con Python

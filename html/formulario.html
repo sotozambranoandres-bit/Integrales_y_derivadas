@@ -3,36 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Integrales | Guía Educativa</title>
+    <title>Formulario Completo de Integrales y EDO | Guía Educativa</title>
+    <meta name="description" content="Formulario exhaustivo de Cálculo Integral y EDO: reglas inmediatas, propiedades de la integral definida, sustitución, integración por partes (ILATE), sustitución trigonométrica, fracciones parciales y variables separables.">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../img/favicon.png">
     <!-- Google Fonts: Inter para un look moderno y limpio -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="../css/styles.css"> 
-    <!-- MathJax: Librería para renderizar fórmulas matemáticas -->
-    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <!-- MathJax: Librería para renderizar fórmulas matemáticas en SVG -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
     <!-- Barra de Navegación -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="nav-logo">📗 Integrales</a>
+            <a href="../index.html" class="nav-logo">📗 Cálculo Integral</a>
             <!-- Botón de menú para celulares -->
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
                 ☰
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li class="dropdown">
-                    <a href="../index.html#inicio" style="cursor: pointer;">📚 Temas ▼</a>
-                    <div class="dropdown-content">
-                        <a href="../index.html#introduccion">1. Introducción</a>
-                        <a href="../index.html#reglas-basicas">2. Reglas Básicas</a>
-                        <a href="../index.html#operaciones">3. Operaciones</a>
-                        <a href="../index.html#metodos">4. Métodos</a>
-                        <a href="../index.html#ejemplos">5. Ejercicios</a>
+                    <a href="../index.html#inicio" style="cursor: pointer;">📚 Temas del Curso ▼</a>
+                    <div class="dropdown-content" style="min-width: 260px;">
+                        <a href="../index.html#definicion">1. Definición (Definida e Indefinida)</a>
+                        <a href="../index.html#riemann">2. Sumatorias de Riemann (Simulador)</a>
+                        <a href="../index.html#area-curva">3. Área bajo la Curva</a>
+                        <a href="../index.html#propiedades">4. Propiedades de la Integral</a>
+                        <a href="../index.html#integrales-directas">5. Integrales Directas</a>
+                        <a href="../index.html#sustitucion">6. Sustitución y Cambio de Variable</a>
+                        <a href="../index.html#por-partes">7. Integración por Partes</a>
+                        <a href="../index.html#sust-trigonometrica">8. Sustitución Trigonométrica</a>
+                        <a href="../index.html#fracciones-parciales">9. Fracciones Parciales</a>
+                        <a href="../index.html#edo-separables">10. EDO Variables Separables</a>
+                        <a href="../index.html#ejercicios-taller">11. Ejercicios Prácticos</a>
                     </div>
                 </li>
                 <li><a href="formulario.html" class="text-primary">📝 Formulario</a></li>
@@ -42,34 +49,34 @@
     </nav>
 
     <!-- Encabezado Secundario -->
-    <header class="hero-section" style="padding-bottom: 1rem;">
+    <header class="hero-section" style="padding-bottom: 1.5rem;">
         <div class="container">
-            <h1>Formulario Completo</h1>
-            <p>Tu hoja de trucos definitiva para resolver cualquier integral.</p>
+            <span class="badge badge-primary" style="margin-bottom: 0.8rem;">Cheat Sheet Oficial</span>
+            <h1>Formulario de Cálculo Integral y EDO</h1>
+            <p>Compendio completo de fórmulas, tablas de métodos analíticos y modelos de resolución rápida para estudiantes universitarios.</p>
         </div>
     </header>
 
     <!-- Contenido Principal -->
-    <main class="container" style="max-width: 900px;">
+    <main class="container" style="max-width: 950px;">
         
         <section class="content-section fade-in visible">
-            <div class="card">
-                <h3 class="mt-0-5">1. Reglas Básicas</h3>
+            <!-- 1. Reglas Fundamentales e Inmediatas -->
+            <div class="card mb-2">
+                <h3 class="mt-0-5">1. Reglas Fundamentales e Integrales Inmediatas</h3>
                 <div class="formula-grid">
                     <div class="formula-box-small">\[ \int k \, dx = kx + C \]</div>
                     <div class="formula-box-small">\[ \int x^n \, dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1) \]</div>
                     <div class="formula-box-small">\[ \int \frac{1}{x} \, dx = \ln|x| + C \]</div>
-                    <div class="formula-box-small">\[ \int e^x \, dx = e^x + C \]</div>
-                    <div class="formula-box-small">\[ \int a^x \, dx = \frac{a^x}{\ln(a)} + C \]</div>
+                    <div class="formula-box-small">\[ \int e^{kx} \, dx = \frac{1}{k}e^{kx} + C \]</div>
+                    <div class="formula-box-small">\[ \int a^x \, dx = \frac{a^x}{\ln(a)} + C \quad (a > 0, a \neq 1) \]</div>
+                    <div class="formula-box-small">\[ \int \frac{1}{x^2 + a^2} \, dx = \frac{1}{a}\arctan\left(\frac{x}{a}\right) + C \]</div>
                 </div>
+            </div>
 
-                <h3 class="mt-2-5">2. Propiedades Algebraicas</h3>
-                <div class="formula-grid">
-                    <div class="formula-box-small">\[ \int k \cdot f(x) \, dx = k \int f(x) \, dx \]</div>
-                    <div class="formula-box-small">\[ \int [f(x) \pm g(x)] \, dx = \int f(x) \, dx \pm \int g(x) \, dx \]</div>
-                </div>
-
-                <h3 class="mt-2-5">3. Integrales Trigonométricas</h3>
+            <!-- 2. Integrales Trigonométricas e Inversas -->
+            <div class="card mb-2">
+                <h3 class="mt-0-5">2. Integrales Trigonométricas</h3>
                 <div class="formula-grid">
                     <div class="formula-box-small">\[ \int \sin(x) \, dx = -\cos(x) + C \]</div>
                     <div class="formula-box-small">\[ \int \cos(x) \, dx = \sin(x) + C \]</div>
@@ -77,22 +84,128 @@
                     <div class="formula-box-small">\[ \int \csc^2(x) \, dx = -\cot(x) + C \]</div>
                     <div class="formula-box-small">\[ \int \sec(x)\tan(x) \, dx = \sec(x) + C \]</div>
                     <div class="formula-box-small">\[ \int \csc(x)\cot(x) \, dx = -\csc(x) + C \]</div>
-                </div>
-
-                <h3 class="mt-2-5">4. Funciones Inversas y Trigonométricas Inversas</h3>
-                <div class="formula-grid">
-                    <div class="formula-box-small">\[ \int \frac{1}{\sqrt{1 - x^2}} \, dx = \arcsin(x) + C \]</div>
-                    <div class="formula-box-small">\[ \int \frac{1}{1 + x^2} \, dx = \arctan(x) + C \]</div>
-                    <div class="formula-box-small">\[ \int \frac{1}{x\sqrt{x^2 - 1}} \, dx = \text{arcsec}|x| + C \]</div>
-                </div>
-
-                <div class="mt-2 text-center text-sm text-muted">
-                    <p><i>Nota: En todas las integrales indefinidas se asume una constante de integración \(C\).</i></p>
+                    <div class="formula-box-small">\[ \int \tan(x) \, dx = \ln|\sec(x)| + C \]</div>
+                    <div class="formula-box-small">\[ \int \cot(x) \, dx = \ln|\sin(x)| + C \]</div>
+                    <div class="formula-box-small">\[ \int \frac{1}{\sqrt{a^2 - x^2}} \, dx = \arcsin\left(\frac{x}{a}\right) + C \]</div>
                 </div>
             </div>
+
+            <!-- 3. Propiedades de la Integral Definida & TFC -->
+            <div class="card mb-2">
+                <h3 class="mt-0-5">3. Propiedades de la Integral Definida & Teorema Fundamental</h3>
+                <div class="cases-grid">
+                    <div class="case-card">
+                        <h4>Linealidad</h4>
+                        <div class="formula-box-small">\[ \int_{a}^{b} [c_1 f \pm c_2 g]\,dx = c_1\int_a^b f \pm c_2\int_a^b g \]</div>
+                    </div>
+                    <div class="case-card blue">
+                        <h4>Inversión & Intervalo Nulo</h4>
+                        <div class="formula-box-small">\[ \int_a^a f\,dx = 0, \quad \int_b^a f\,dx = -\int_a^b f\,dx \]</div>
+                    </div>
+                    <div class="case-card purple">
+                        <h4>Aditividad de Intervalos</h4>
+                        <div class="formula-box-small">\[ \int_a^b f\,dx = \int_a^c f\,dx + \int_c^b f\,dx \]</div>
+                    </div>
+                    <div class="case-card amber">
+                        <h4>Regla de Barrow (TFC II)</h4>
+                        <div class="formula-box-small">\[ \int_a^b f(x)\,dx = F(b) - F(a) \]</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Métodos: Sustitución e Integración por Partes -->
+            <div class="card mb-2">
+                <h3 class="mt-0-5">4. Sustitución y Por Partes (ILATE)</h3>
+                <div class="cases-grid">
+                    <div class="case-card">
+                        <h4>Sustitución / Cambio de Variable</h4>
+                        <p class="text-sm text-muted">Sea \( u = g(x) \implies du = g'(x)\,dx \):</p>
+                        <div class="formula-box-small">
+                            \[ \int f(g(x))g'(x)\,dx = \int f(u)\,du \]
+                        </div>
+                    </div>
+
+                    <div class="case-card blue">
+                        <h4>Integración por Partes</h4>
+                        <p class="text-sm text-muted">Fórmula fundamental:</p>
+                        <div class="formula-box-small">
+                            \[ \int u \, dv = u \cdot v - \int v \, du \]
+                        </div>
+                        <p class="text-sm text-muted mt-1"><strong>Prioridad ILATE para \( u \):</strong> Inversas > Logarítmicas > Algebraicas > Trigonométricas > Exponenciales.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Sustitución Trigonométrica -->
+            <div class="card mb-2">
+                <h3 class="mt-0-5">5. Sustitución Trigonométrica (Los 3 Casos)</h3>
+                <div class="cases-grid">
+                    <div class="case-card">
+                        <h4>Caso 1: \(\sqrt{a^2 - x^2}\)</h4>
+                        <ul class="text-sm text-muted ml-2 leading-loose">
+                            <li>\( x = a \sin(\theta) \)</li>
+                            <li>\( dx = a \cos(\theta) \, d\theta \)</li>
+                            <li>\( \sqrt{a^2 - x^2} = a \cos(\theta) \)</li>
+                            <li>Identidad: \( 1 - \sin^2(\theta) = \cos^2(\theta) \)</li>
+                        </ul>
+                    </div>
+
+                    <div class="case-card blue">
+                        <h4>Caso 2: \(\sqrt{a^2 + x^2}\)</h4>
+                        <ul class="text-sm text-muted ml-2 leading-loose">
+                            <li>\( x = a \tan(\theta) \)</li>
+                            <li>\( dx = a \sec^2(\theta) \, d\theta \)</li>
+                            <li>\( \sqrt{a^2 + x^2} = a \sec(\theta) \)</li>
+                            <li>Identidad: \( 1 + \tan^2(\theta) = \sec^2(\theta) \)</li>
+                        </ul>
+                    </div>
+
+                    <div class="case-card purple">
+                        <h4>Caso 3: \(\sqrt{x^2 - a^2}\)</h4>
+                        <ul class="text-sm text-muted ml-2 leading-loose">
+                            <li>\( x = a \sec(\theta) \)</li>
+                            <li>\( dx = a \sec(\theta)\tan(\theta) \, d\theta \)</li>
+                            <li>\( \sqrt{x^2 - a^2} = a \tan(\theta) \)</li>
+                            <li>Identidad: \( \sec^2(\theta) - 1 = \tan^2(\theta) \)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Fracciones Parciales -->
+            <div class="card mb-2">
+                <h3 class="mt-0-5">6. Fracciones Parciales (Cociente Propio \(P(x)/Q(x)\))</h3>
+                <div class="cases-grid">
+                    <div class="case-card">
+                        <h4>Lineales Distintos</h4>
+                        <div class="formula-box-small">\[ \frac{A}{x - r_1} + \frac{B}{x - r_2} \]</div>
+                    </div>
+                    <div class="case-card blue">
+                        <h4>Lineales Repetidos</h4>
+                        <div class="formula-box-small">\[ \frac{A_1}{x - r} + \frac{A_2}{(x - r)^2} + \dots \]</div>
+                    </div>
+                    <div class="case-card purple">
+                        <h4>Cuadrático Irreducible</h4>
+                        <div class="formula-box-small">\[ \frac{Ax + B}{ax^2 + bx + c} \]</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. EDO de Variables Separables -->
+            <div class="card mb-2">
+                <h3 class="mt-0-5">7. Ecuaciones Diferenciales Ordinarias (Variables Separables)</h3>
+                <p class="text-sm text-muted">Ecuación de primer orden separable:</p>
+                <div class="formula-box">
+                    \[ \frac{dy}{dx} = g(x) \cdot h(y) \quad \iff \quad \int \frac{1}{h(y)} \, dy = \int g(x) \, dx + C \]
+                </div>
+                <p class="text-sm text-muted mt-1">
+                    <strong>Problema de Valor Inicial (PVI):</strong> Si se conoce una condición de contorno \( y(x_0) = y_0 \), se evalúa la solución general para fijar el valor numérico exacto de la constante \( C \).
+                </p>
+            </div>
             
-            <div class="text-center mt-2">
-                <a href="../index.html" class="btn-primary">Volver a los Temas ⬅️</a>
+            <div class="text-center mt-2" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="../index.html" class="btn-primary">⬅️ Volver a la Guía de Temas</a>
+                <a href="quiz.html" class="btn-toggle" style="margin-top: 0; padding: 0.8rem 1.5rem;">🎓 Poner a Prueba en el Quiz</a>
             </div>
         </section>
 
@@ -101,7 +214,7 @@
     <!-- Pie de página -->
     <footer>
         <div class="container">
-            <p>Creado para propósitos educativos. 2026</p>
+            <p>Guía Educativa de Cálculo Integral y EDO • Formulario 2026</p>
         </div>
     </footer>
 

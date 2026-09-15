@@ -627,6 +627,279 @@ footer {
 }
 
 /* ==========================================================================
+   SIMULADOR INTERACTIVO DE RIEMANN
+   ========================================================================== */
+.sim-container {
+    background-color: rgba(20, 20, 20, 0.7);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.sim-canvas-wrapper {
+    width: 100%;
+    background-color: #0d1117;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.sim-canvas-wrapper canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.sim-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+    align-items: center;
+}
+
+.sim-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.sim-control-group label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.sim-select, .sim-slider {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 6px;
+    padding: 0.6rem 0.8rem;
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.sim-select:focus, .sim-slider:focus {
+    border-color: var(--primary-color);
+}
+
+.sim-slider {
+    cursor: pointer;
+    accent-color: var(--primary-color);
+    padding: 0;
+}
+
+.sim-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.2rem;
+    padding: 1rem;
+    background-color: rgba(74, 222, 128, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 130px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   PASOS Y MÉTODOS DE INTEGRACIÓN (STEP CARDS)
+   ========================================================================== */
+.steps-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.step-card {
+    display: flex;
+    gap: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 1.2rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.step-card:hover {
+    transform: translateX(4px);
+    border-color: rgba(74, 222, 128, 0.4);
+}
+
+.step-badge {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.step-body h4 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+}
+
+.step-body p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+}
+
+/* ==========================================================================
+   BADGES Y CHIPS
+   ========================================================================== */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+}
+
+.badge-primary {
+    background-color: rgba(74, 222, 128, 0.15);
+    color: var(--primary-color);
+    border: 1px solid rgba(74, 222, 128, 0.4);
+}
+
+.badge-blue {
+    background-color: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.badge-purple {
+    background-color: rgba(192, 132, 252, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(192, 132, 252, 0.4);
+}
+
+.badge-amber {
+    background-color: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.4);
+}
+
+/* ==========================================================================
+   CASES GRID (Para Sustitución Trigonométrica y Fracciones Parciales)
+   ========================================================================== */
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.case-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.case-card.blue { border-top-color: #38bdf8; }
+.case-card.purple { border-top-color: #c084fc; }
+.case-card.amber { border-top-color: #fbbf24; }
+
+.case-card h4 {
+    font-size: 1rem;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==========================================================================
+   ILATE MNEMOTECNIA BANNER
+   ========================================================================== */
+.ilate-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.6rem;
+    margin: 1.2rem 0;
+}
+
+.ilate-item {
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    border-radius: 8px;
+    padding: 0.8rem 0.4rem;
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.ilate-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+}
+
+.ilate-letter {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.ilate-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 0.4rem;
+}
+
+.ilate-example {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .ilate-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+}
+
+/* ==========================================================================
    MEDIA QUERIES (Diseño Responsivo Perfecto)
    ========================================================================== */
 @media screen and (max-width: 768px) {

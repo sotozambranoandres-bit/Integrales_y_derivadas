@@ -3,64 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Interactivo | Integrales</title>
+    <title>Quiz Interactivo | Cálculo Integral y EDO</title>
+    <meta name="description" content="Pon a prueba tus conocimientos sobre sumas de Riemann, área bajo la curva, propiedades, métodos de integración y EDOs de variables separables.">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../img/favicon.png">
     <!-- Google Fonts: Inter para un look moderno y limpio -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="../css/styles.css"> 
-    <!-- MathJax: Librería para renderizar fórmulas matemáticas -->
-    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <!-- MathJax: Librería para renderizar fórmulas matemáticas en SVG -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
     <!-- Barra de Navegación -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="nav-logo">📗 Integrales</a>
+            <a href="../index.html" class="nav-logo">📗 Cálculo Integral</a>
             <!-- Botón de menú para celulares -->
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
                 ☰
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li class="dropdown">
-                    <a href="../index.html#inicio" style="cursor: pointer;">📚 Temas ▼</a>
-                    <div class="dropdown-content">
-                        <a href="../index.html#introduccion">1. Introducción</a>
-                        <a href="../index.html#reglas-basicas">2. Reglas Básicas</a>
-                        <a href="../index.html#operaciones">3. Operaciones</a>
-                        <a href="../index.html#metodos">4. Métodos</a>
-                        <a href="../index.html#ejemplos">5. Ejercicios</a>
+                    <a href="../index.html#inicio" style="cursor: pointer;">📚 Temas del Curso ▼</a>
+                    <div class="dropdown-content" style="min-width: 260px;">
+                        <a href="../index.html#definicion">1. Definición (Definida e Indefinida)</a>
+                        <a href="../index.html#riemann">2. Sumatorias de Riemann (Simulador)</a>
+                        <a href="../index.html#area-curva">3. Área bajo la Curva</a>
+                        <a href="../index.html#propiedades">4. Propiedades de la Integral</a>
+                        <a href="../index.html#integrales-directas">5. Integrales Directas</a>
+                        <a href="../index.html#sustitucion">6. Sustitución y Cambio de Variable</a>
+                        <a href="../index.html#por-partes">7. Integración por Partes</a>
+                        <a href="../index.html#sust-trigonometrica">8. Sustitución Trigonométrica</a>
+                        <a href="../index.html#fracciones-parciales">9. Fracciones Parciales</a>
+                        <a href="../index.html#edo-separables">10. EDO Variables Separables</a>
+                        <a href="../index.html#ejercicios-taller">11. Ejercicios Prácticos</a>
                     </div>
                 </li>
+                <li><a href="formulario.html" class="text-primary">📝 Formulario</a></li>
                 <li><a href="quiz.html" class="text-primary">🎓 Quiz Interactivo</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Encabezado Secundario -->
-    <header class="hero-section" style="padding-bottom: 1rem;">
+    <header class="hero-section" style="padding-bottom: 1.5rem;">
         <div class="container">
-            <h1>Quiz de Integrales</h1>
-            <p>Pon a prueba tus conocimientos sobre las propiedades del cálculo integral.</p>
+            <span class="badge badge-primary" style="margin-bottom: 0.8rem;">Evaluación Formativa</span>
+            <h1>Quiz de Cálculo Integral y EDO</h1>
+            <p>Pon a prueba tus conocimientos teóricos y prácticos sobre todos los temas del curso con retroalimentación instantánea paso a paso.</p>
         </div>
     </header>
 
     <!-- Contenido Principal -->
     <main class="container">
-        <!-- QUIZ SECCION -->
-        <section id="quiz-seccion" class="content-section fade-in">
+        <!-- SECCIÓN DE QUIZ -->
+        <section id="quiz-seccion" class="content-section fade-in visible">
             <div class="card" id="quiz-container">
                 <div class="progress-bar-container">
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
-                <h3 id="question-tracker" class="text-muted text-sm mt-0-5">Pregunta 1 de 5</h3>
-                <p id="question-text" class="math-label mt-1">Cargando pregunta...</p>
+                <h3 id="question-tracker" class="text-muted text-sm mt-0-5">Cargando preguntas...</h3>
+                <p id="question-text" class="math-label mt-1" style="font-size: 1.15rem; font-weight: 600; color: #ffffff;">Cargando enunciado...</p>
                 
                 <div class="options-grid" id="options-container">
-                    <!-- Las opciones se generan con JS -->
+                    <!-- Las opciones se generan dinámicamente con JS -->
                 </div>
 
                 <div id="feedback-container" class="feedback-box hidden"></div>
@@ -73,9 +82,12 @@
             <!-- Contenedor de Resultados Finales -->
             <div class="card hidden text-center" id="result-container">
                 <h2 class="text-primary mb-2">¡Quiz Completado!</h2>
-                <div class="score-circle mb-2" id="final-score">0/5</div>
-                <p id="result-message" class="text-md mb-2"></p>
-                <button class="btn-toggle" onclick="location.reload()">🔄 Reintentar Quiz</button>
+                <div class="score-circle mb-2" id="final-score">0/8</div>
+                <p id="result-message" class="text-md mb-2" style="font-size: 1.1rem; line-height: 1.6;"></p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <button class="btn-toggle" onclick="location.reload()">🔄 Reintentar Quiz</button>
+                    <a href="../index.html" class="btn-primary">📚 Repasar Temas</a>
+                </div>
             </div>
         </section>
     </main>
@@ -83,7 +95,7 @@
     <!-- Pie de página -->
     <footer>
         <div class="container">
-            <p>Creado para propósitos educativos. 2026</p>
+            <p>Guía Educativa de Cálculo Integral y EDO • Evaluación Interactiva 2026</p>
         </div>
     </footer>
 
